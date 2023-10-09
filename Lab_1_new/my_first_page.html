@@ -32,12 +32,12 @@
         border-style: solid;
         border-image-source: linear-gradient(to left, #fe019a , #7df9ff);
     }
+
     #xTitle{
         color: #7df9ff;
         font-size: 25px;
     }
     #yTitle{
-        color: #fe59c2;
         font-size: 25px;
     }
     #rTitle{
@@ -46,6 +46,8 @@
         -webkit-text-fill-color: transparent;
         font-size: 25px;
     }
+
+
     .submitButton{
         background-image: linear-gradient(to right, #7df9ff, #fe019a);
         -webkit-background-clip: text;
@@ -73,7 +75,7 @@
     #paddingR{
         padding-left: 150px;
     }
-    #paddingTable{
+    .paddingTable{
         padding-left: 80px;
         padding-top: 50px;
     }
@@ -118,6 +120,29 @@
       #paddingPic{
           padding-left: 200px;
       }
+      span{
+          background-image: linear-gradient(to right, #7df9ff, #fe019a);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          font-size: 20px;
+          font-family: Cursive;
+          text-align: center;
+      }
+      .resText{
+          text-align: center;
+          font-size: 30px;
+          padding-left: 30px;
+      }
+      .resPadding{
+          padding-left: 100px;
+          padding-top: 50px;
+      }
+      .inTableResPadding{
+          padding-left: 30px;
+      }
+      #prevAnswersText{
+          padding-left: 200px;
+      }
 
 
   </style>
@@ -149,10 +174,92 @@
                            </td>
                            <td>
                                <!-- Таблица с последним результатом  -->
-                               <table>
-
+                               <table class="resPadding">
+                                      <tr>
+                                          <td>
+                                              <span class="resText">Результат:</span>
+                                          </td>
+                                      </tr>
+                                   <tr>
+                                       <td>
+                                           <span>Попала?</span>
+                                       </td>
+                                       <td>
+                                           <!-- Здесь должен быть ответ -->
+                                       </td>
+                                   </tr>
+                                   <tr>
+                                       <td>
+                                           <span>X = </span>
+                                       </td>
+                                       <td>
+                                           <!-- Здесь должен быть ответ -->
+                                       </td>
+                                   </tr>
+                                   <tr>
+                                       <td>
+                                           <span>Y = </span>
+                                       </td>
+                                       <td>
+                                           <!-- Здесь должен быть ответ -->
+                                       </td>
+                                   </tr>
+                                   <tr>
+                                       <td>
+                                           <span>R = </span>
+                                       </td>
+                                       <td>
+                                           <!-- Здесь должен быть ответ -->
+                                       </td>
+                                   </tr>
+                                   <tr>
+                                       <td>
+                                           <span>Текущее время: </span>
+                                       </td>
+                                       <td>
+                                           <!-- Здесь должен быть ответ -->
+                                       </td>
+                                   </tr>
+                                   <tr>
+                                       <td>
+                                           <span>Время работы скрипта: </span>
+                                       </td>
+                                       <td>
+                                           <!-- Здесь должен быть ответ -->
+                                       </td>
+                                   </tr>
                                </table>
+                           </td>
+                           <td>
+                               <!-- Таблица с предыдущими результатами  -->
+                               <table class="resPadding">
+                                     <tr>
 
+                                              <span id="prevAnswersText">Предыдущие результаты:</span>
+
+
+                                     </tr>
+                                   <tr>
+                                       <td>
+                                           <span>Попала?</span>
+                                       </td>
+                                       <td class="inTableResPadding">
+                                           <span>X</span>
+                                       </td>
+                                       <td class="inTableResPadding">
+                                           <span>Y</span>
+                                       </td>
+                                       <td class="inTableResPadding">
+                                           <span>R</span>
+                                       </td>
+                                       <td class="inTableResPadding">
+                                           <span>Текущее время</span>
+                                       </td>
+                                       <td class="inTableResPadding">
+                                           <span>Время работы</span>
+                                       </td>
+                                   </tr>
+                               </table>
                            </td>
                        </tr>
 
@@ -162,7 +269,7 @@
             <tr>
                 <td>
                     <!-- эта таблица отвечает за выбираемые кнопки  -->
-                    <table id="paddingTable">
+                    <table class="paddingTable">
                         <tr>
                             <td>
                                 <table class="borderName">
