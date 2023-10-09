@@ -51,6 +51,7 @@
         -webkit-text-fill-color: transparent;
         font-size: 25px;
     }
+    /* :hover -- ример селектора псевдокласса */
     .submitButton:hover{
         background-image: linear-gradient(to right, #fe019a, #7df9ff);
         border-image-slice: 1;
@@ -58,6 +59,11 @@
         border-style: solid;
         border-image-source: linear-gradient(to right, #fe019a , #7df9ff);
         cursor: pointer;
+    }
+    /* пример использования селектора псевдоэлемента */
+    input::placeholder{
+        font-family: Cursive;
+        font-size: medium;
     }
     .submit{
 
@@ -221,6 +227,5 @@
             </tr>
         </table>
     </form>
-
 </body>
 </html>
