@@ -24,6 +24,7 @@
       font-size: 50px;
       font-family: Cursive;
         text-align: center;
+
     }
     .borderName:hover{
         border-image-slice: 1;
@@ -65,9 +66,7 @@
         font-family: Cursive;
         font-size: medium;
     }
-    .submit{
 
-    }
     .paddingEl{
         padding: 15px;
     }
@@ -76,9 +75,13 @@
     }
     #paddingTable{
         padding-left: 80px;
+        padding-top: 50px;
     }
     #xSelectorStyle{
         background-image: linear-gradient(to bottom, #fe019a, #7df9ff);
+    }
+    .xClicked{
+        font-family: Cursive;
     }
     .xClicked:hover{
         background-color: black;
@@ -112,6 +115,9 @@
       td > input{
           font-family: Cursive;
       }
+      #paddingPic{
+          padding-left: 200px;
+      }
 
 
   </style>
@@ -131,106 +137,144 @@
     <!-- В form будут собираться данные для отправки на сервер, скрипт, которому передается управление, в action указан  -->
     <form action="handler.php" method="post">
         <!-- Табличная верстка летс гоу  -->
-        <!-- эта таблица отвечает за выбираемые кнопки  -->
-        <table id="paddingTable">
+        <!-- Основная таблица -->
+        <table>
             <tr>
-               <td>
-                   <table class="borderName">
-                       <tr>
-                           <td>
-                               <span id="xTitle">Выбор координаты X:</span>
-                           </td>
-                       </tr>
-                       <tr>
-                           <td class="paddingEl">
-                               <select name="X" id = "xSelectorStyle"  required = "required" size="3">
-                                   <option class="xClicked" value="-4">-4</option>
-                                   <option class="xClicked" value="-3">-3</option>
-                                   <option class="xClicked" value="-2">-2</option>
-                                   <option class="xClicked" value="-1">-1</option>
-                                   <option class="xClicked" value="0">0</option>
-                                   <option class="xClicked" value="1">1</option>
-                                   <option class="xClicked" value="2">2</option>
-                                   <option class="xClicked" value="3">3</option>
-                                   <option class="xClicked" value="4">4</option>
-                               </select>
-                           </td>
-                       </tr>
-                   </table>
-               </td>
                 <td>
-                  <table class="borderName">
-                      <tr>
-                          <td>
-                              <span id="yTitle">Ввод координаты Y:</span>
-                          </td>
-                      </tr>
-                      <tr>
-                          <td class="paddingEl">
-                          <input id="yTextField" class="selectingAreas" type="text" name="Y"
-                                 tabindex="3"
-                                 placeholder="(-5;3)" required>
-                          </td>
-                      </tr>
-                  </table>
+                   <table>
+                       <tr>
+                           <!--  Здесь должна быть картинка   -->
+                           <td>
+                               <img src="ros_area.png" id="paddingPic">
+                           </td>
+                           <td>
+                               <!-- Таблица с последним результатом  -->
+                               <table>
+
+                               </table>
+
+                           </td>
+                       </tr>
+
+                   </table>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <table id="paddingR">
+                    <!-- эта таблица отвечает за выбираемые кнопки  -->
+                    <table id="paddingTable">
                         <tr>
-                           <td>
-                               <span id="rTitle">Выбор значения R:</span>
-                           </td>
+                            <td>
+                                <table class="borderName">
+                                    <tr>
+                                        <td>
+                                            <span id="xTitle">Выбор координаты X:</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="paddingEl">
+                                            <select name="X" id = "xSelectorStyle"  required = "required" size="3">
+                                                <option class="xClicked" value="-4">-4</option>
+                                                <option class="xClicked" value="-3">-3</option>
+                                                <option class="xClicked" value="-2">-2</option>
+                                                <option class="xClicked" value="-1">-1</option>
+                                                <option class="xClicked" value="0">0</option>
+                                                <option class="xClicked" value="1">1</option>
+                                                <option class="xClicked" value="2">2</option>
+                                                <option class="xClicked" value="3">3</option>
+                                                <option class="xClicked" value="4">4</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td>
+                                <table class="borderName">
+                                    <tr>
+                                        <td>
+                                            <span id="yTitle">Ввод координаты Y:</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="paddingEl">
+                                            <input id="yTextField" class="selectingAreas" type="text" name="Y"
+                                                   tabindex="3"
+                                                   placeholder="(-5;3)" required>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
                         </tr>
                         <tr>
-                            <td class="paddingEl">
+                            <td>
+                                <table id="paddingR">
+                                    <tr>
+                                        <td>
+                                            <span id="rTitle">Выбор значения R:</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="paddingEl">
                                 <span class="clickedElement">
                                                 <input class="rRadio" type="radio" name="R" tabindex="1"
                                                        placeholder="Параметр R"
                                                        value="1" required>
                                                 <span>1</span>
                                             </span>
-                                <span class="clickedElement">
+                                            <span class="clickedElement">
                                                 <input class="rRadio" type="radio" name="R" tabindex="1"
                                                        placeholder="Параметр R"
                                                        value="2">
                                                 <span>2</span>
                                             </span>
-                                <span class="clickedElement">
+                                            <span class="clickedElement">
                                                 <input class="rRadio" type="radio" name="R" tabindex="1"
                                                        placeholder="Параметр R"
                                                        value="3">
                                                 <span>3</span>
                                             </span>
-                                <span class="clickedElement">
+                                            <span class="clickedElement">
                                                 <input class="rRadio" type="radio" name="R" tabindex="1"
                                                        placeholder="Параметр R"
                                                        value="4">
                                                 <span>4</span>
                                             </span>
-                                <span class="clickedElement">
+                                            <span class="clickedElement">
                                                 <input class="rRadio" type="radio" name="R" tabindex="1"
                                                        placeholder="Параметр R"
                                                        value="5">
                                                 <span>5</span>
                                             </span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="paddingEl">
+                            <td class="submit paddingEl" >
+                                <input class="submitButton" type="submit" value="Проверить точку" disabled />
+
+                            </td>
+                            <td class="submit">
+                                <input class="submitButton" type="submit" value="Очистить таблицу" />
+
                             </td>
                         </tr>
                     </table>
+
                 </td>
             </tr>
-            <tr class="paddingEl">
-            <td class="submit paddingEl" >
-                <input class="submitButton" type="submit" value="Проверить точку" disabled />
+            <tr>
+                <td>
+                    <!-- Таблица с предыдущими результатами  -->
+                    <table>
 
-            </td>
-                <td class="submit">
-                    <input class="submitButton" type="submit" value="Очистить таблицу" />
-
+                    </table>
                 </td>
             </tr>
         </table>
+
+
     </form>
 </body>
 </html>
