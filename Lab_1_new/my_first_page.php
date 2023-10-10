@@ -17,7 +17,11 @@ if (isset($_POST['R']) && isset($_POST['X']) && isset($_POST['Y'])) {
   <!-- Здесь будем задавать стиль на CSS -->
   <style>
       body {
-          background-color: black;
+          /*background-color: #30363b ;
+          background: #272b2e;
+
+           */
+          background: #202224;
           cursor: auto;
       }
     /* header div и header div p -- селекторы потомств */
@@ -27,7 +31,7 @@ if (isset($_POST['R']) && isset($_POST['X']) && isset($_POST['Y'])) {
     }
 
     header div {
-      background-image: linear-gradient(to right, #7df9ff, #fe019a);
+      background-image: linear-gradient(to right,#69b7eb, #b3dbd3, #f4d6db);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       font-size: 50px;
@@ -39,18 +43,18 @@ if (isset($_POST['R']) && isset($_POST['X']) && isset($_POST['Y'])) {
         border-image-slice: 1;
         border-width: 2px;
         border-style: solid;
-        border-image-source: linear-gradient(to left, #fe019a , #7df9ff);
+        border-image-source: linear-gradient(to left,  #69b7eb, #b3dbd3, #f4d6db);
     }
 
     #xTitle{
-        color: #7df9ff;
+        color: #b3dbd3;
         font-size: 25px;
     }
     #yTitle{
         font-size: 25px;
     }
     #rTitle{
-        background-image: linear-gradient(to right, #7df9ff, #fe019a);
+        background-image: linear-gradient(to right, #69b7eb, #b3dbd3, #f4d6db);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         font-size: 25px;
@@ -58,18 +62,18 @@ if (isset($_POST['R']) && isset($_POST['X']) && isset($_POST['Y'])) {
 
 
     .submitButton{
-        background-image: linear-gradient(to right, #7df9ff, #fe019a);
+        background-image: linear-gradient(to right, #69b7eb, #b3dbd3, #f4d6db);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         font-size: 25px;
     }
     /* :hover -- ример селектора псевдокласса */
     .submitButton:hover{
-        background-image: linear-gradient(to right, #fe019a, #7df9ff);
+        background-image: linear-gradient(to left, #69b7eb, #b3dbd3, #f4d6db);
         border-image-slice: 1;
         border-width: 2px;
         border-style: solid;
-        border-image-source: linear-gradient(to right, #fe019a , #7df9ff);
+        border-image-source: linear-gradient(to left,  #69b7eb, #b3dbd3, #f4d6db);
         cursor: pointer;
     }
     /* пример использования селектора псевдоэлемента */
@@ -89,32 +93,32 @@ if (isset($_POST['R']) && isset($_POST['X']) && isset($_POST['Y'])) {
         padding-top: 50px;
     }
     #xSelectorStyle{
-        background-image: linear-gradient(to bottom, #fe019a, #7df9ff);
+        background-image: linear-gradient(to bottom, #69b7eb, #b3dbd3, #f4d6db);
     }
     .xClicked{
         font-family: Cursive;
     }
     .xClicked:hover{
-        background-color: black;
-        color: violet;
+        background-color: #202224;
+        color: #f4d6db;
     }
       .xClicked:checked{
-          background-color: black;
-          color: #7df9ff;
+          background-color: #202224;
+          color: #b3dbd3;
       }
       #yTextField {
           text-align: center;
-          background-color: black;
-          color: #7df9ff;
+          background-color: #202224;
+          color: #b3dbd3;
           font-size: 15px;
           border-image-slice: 1;
           border-width: 2px;
           border-style: solid;
-          border-image-source: linear-gradient(to left, #fe019a , #7df9ff);
+          border-image-source: linear-gradient(to left, #69b7eb, #b3dbd3, #f4d6db);
       }
     #yTextField:hover {
-        color: black;
-        background-image: linear-gradient(to left, #fe019a, #7df9ff);
+        color: #202224;
+        background-image: linear-gradient(to left, #69b7eb, #b3dbd3, #f4d6db);
     }
     .rRadio:hover{
        cursor: pointer;
@@ -124,7 +128,7 @@ if (isset($_POST['R']) && isset($_POST['X']) && isset($_POST['Y'])) {
     border-image-slice: 1;
     border-width: 2px;
     border-style: solid;
-    border-image-source: linear-gradient(to left, #fe019a , #7df9ff);
+    border-image-source: linear-gradient(to left, #69b7eb, #b3dbd3, #f4d6db);
 }
 
 
@@ -136,13 +140,13 @@ if (isset($_POST['R']) && isset($_POST['X']) && isset($_POST['Y'])) {
       }
       #paddingPic{
           padding-left: 200px;
-         color: #7df9ff;
+         color: #b3dbd3;
           font-size: 25px;
           font-family: Cursive;
           text-align: center;
       }
       span{
-          background-image: linear-gradient(to right, #7df9ff, #fe019a);
+          background-image: linear-gradient(to right,#69b7eb, #b3dbd3, #f4d6db);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           font-size: 20px;
@@ -197,7 +201,7 @@ if (isset($_POST['R']) && isset($_POST['X']) && isset($_POST['Y'])) {
                        <tr>
                            <!--  Здесь должна быть картинка   -->
                            <td>
-                               <img src="ros_area.png" id="paddingPic" alt="А график? ^. .^ &#128148;">
+                               <img src="light_blue.png" id="paddingPic" alt="А график? ^. .^ &#128148;">
                            </td>
                            <td>
                                <!-- Таблица с последним результатом  -->
@@ -313,6 +317,7 @@ if (isset($_POST['R']) && isset($_POST['X']) && isset($_POST['Y'])) {
                                            <span>Время работы</span>
                                        </td>
                                    </tr>
+
                                </table>
                            </td>
                        </tr>
