@@ -6,11 +6,60 @@ function validateForm() {
     let rChecked = rChecker();
 
     if(xChecked && yChecked && rChecked) {
-        //добавить последние данные в табличку
+        addLast();
         return true;
     }
     return false;
 
+}
+
+var lastRequest = saveLastReq();
+
+function addLast() {
+    let input = document.createElement('input');
+    let form = document.getElementById("subForm");
+
+    if (!(lastRequest === "")) {
+        input.setAttribute('name', 'savedRequests');
+        input.setAttribute('value', lastRequest);
+        input.setAttribute('type', 'hidden')
+        form.appendChild(input);
+    }
+}
+
+function saveLastReq(){
+    let inputValue = "";
+
+    if (!(document.getElementById("didHit") === null)) {
+        let resultOfHitting = document.getElementById("didHit");
+        let resultX = document.getElementById("xAnswer");
+        let resultY = document.getElementById("yAnswer");
+        let resultR = document.getElementById("rAnswer");
+        let resultTime = document.getElementById("timeWas");
+        let resultWorkTime = document.getElementById("workTime");
+
+        inputValue += resultOfHitting.innerText + "," + resultX.innerText + "," +
+            resultY.innerText + "," + resultR.innerText + "," + resultTime.innerText + "," +
+            resultWorkTime.innerText + ",";
+        inputValue = inputValue.replace(/.$/, ";");
+    }
+
+    if (!(document.getElementById("reqTable") === null)) {
+        let savedRequests = document.getElementById("reqTable").getElementsByClassName("request");
+        for (let req of savedRequests) {
+            let reqEl = req.getElementsByClassName("parameter");
+            for (let el of reqEl) {
+                console.log("parameter");
+                inputValue += el.innerText + ",";
+            }
+            inputValue = inputValue.replace(/.$/, ";");
+        }
+        inputValue = inputValue.replace(/.$/, "");
+    }
+    if (inputValue.charAt(inputValue.length - 1) === ";") {
+        inputValue = inputValue.replace(/.$/, "");
+    }
+    return inputValue;
 }
 
 function xChecker() {
