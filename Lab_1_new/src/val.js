@@ -1,3 +1,5 @@
+
+var lastRequests = saveLastReq();
 // главная функция, которая проверяет валидность введенных данных
 function validateForm() {
     document.getElementById("error").innerText = "";
@@ -13,15 +15,14 @@ function validateForm() {
 
 }
 
-var lastRequest = saveLastReq();
 
 function addLast() {
     let input = document.createElement('input');
     let form = document.getElementById("subForm");
 
-    if (!(lastRequest === "")) {
+    if (!(lastRequests === "")) {
         input.setAttribute('name', 'savedRequests');
-        input.setAttribute('value', lastRequest);
+        input.setAttribute('value', lastRequests);
         input.setAttribute('type', 'hidden')
         form.appendChild(input);
     }
@@ -46,11 +47,13 @@ function saveLastReq(){
 
     if (!(document.getElementById("reqTable") === null)) {
         let savedRequests = document.getElementById("reqTable").getElementsByClassName("request");
-        for (let req of savedRequests) {
-            let reqEl = req.getElementsByClassName("parameter");
-            for (let el of reqEl) {
+
+        for (let request of savedRequests) {
+            let requestElements = request.getElementsByClassName("parameter");
+
+            for (let element of requestElements) {
                 console.log("parameter");
-                inputValue += el.innerText + ",";
+                inputValue += element.innerText + ",";
             }
             inputValue = inputValue.replace(/.$/, ";");
         }

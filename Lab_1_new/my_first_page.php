@@ -216,9 +216,9 @@ if (isset($_POST['R']) && isset($_POST['X']) && isset($_POST['Y'])) {
                                            <!-- Здесь должен быть ответ -->
                                            <?php if(isset($is_hit)) {
                                                if ($is_hit === "true") {
-                                                   echo "<span id='didHit'>" ."Да".  "</span>";
+                                                   echo "<span id='didHit'>" . "Да" . "</span>";
                                                } else {
-                                                   echo "<span id='didHit'>" ."Нет".  "</span>";
+                                                   echo "<span id='didHit'>" . "Нет" . "</span>";
                                                }
                                            }
                                            ?>
@@ -231,7 +231,7 @@ if (isset($_POST['R']) && isset($_POST['X']) && isset($_POST['Y'])) {
                                        <td>
                                            <!-- Здесь должен быть ответ -->
                                            <?php if(isset($is_hit)) {
-                                               echo "<span id='xAnswer'>" .$_POST['X'].  "</span>";
+                                               echo "<span id='xAnswer'>" . $_POST['X'] . "</span>";
                                            }
                                            ?>
                                        </td>
@@ -243,7 +243,7 @@ if (isset($_POST['R']) && isset($_POST['X']) && isset($_POST['Y'])) {
                                        <td >
                                            <!-- Здесь должен быть ответ -->
                                            <?php if(isset($is_hit)) {
-                                               echo "<span id='yAnswer'>" .$_POST['Y'].  "</span>";
+                                               echo "<span id='yAnswer'>" . $_POST['Y'] . "</span>";
                                            }
                                            ?>
                                        </td>
@@ -255,7 +255,7 @@ if (isset($_POST['R']) && isset($_POST['X']) && isset($_POST['Y'])) {
                                        <td >
                                            <!-- Здесь должен быть ответ -->
                                            <?php if(isset($is_hit)) {
-                                               echo "<span id='rAnswer'>" .$_POST['R'].  "</span>";
+                                               echo "<span id='rAnswer'>" . $_POST['R'] . "</span>";
                                            }
                                            ?>
                                        </td>
@@ -268,7 +268,7 @@ if (isset($_POST['R']) && isset($_POST['X']) && isset($_POST['Y'])) {
                                            <!-- Здесь должен быть ответ -->
                                            <?php if(isset($is_hit)) {
                                                $now = date('H:i:s');
-                                               echo "<span id='timeWas'>" .$now.  "</span>";
+                                               echo "<span id='timeWas'>" . $now . "</span>";
                                            }
                                            ?>
                                        </td>
@@ -281,7 +281,7 @@ if (isset($_POST['R']) && isset($_POST['X']) && isset($_POST['Y'])) {
                                            <!-- Здесь должен быть ответ -->
                                            <?php if(isset($is_hit)) {
                                                $stop = microtime(true) * 1000000;
-                                               echo "<span id='workTime'>" .($stop - $start). "мкс" . "</span>";
+                                               echo "<span id='workTime'>" . ($stop - $start) . " мкс" . "</span>";
                                            }
                                            ?>
                                        </td>
@@ -314,6 +314,7 @@ if (isset($_POST['R']) && isset($_POST['X']) && isset($_POST['Y'])) {
                                            <span>Время работы</span>
                                        </td>
                                    </tr>
+
                                    <?php
                                    if (isset($_POST['savedRequests'])) {
                                        echo "<table id='reqTable>'";
