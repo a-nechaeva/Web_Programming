@@ -17,7 +17,7 @@ if (isset($_POST['R']) && isset($_POST['X']) && isset($_POST['Y'])) {
   <!-- Здесь будем задавать стиль на CSS -->
   <style>
       body {
-          background-color: black;
+          background-color: white;
           cursor: auto;
       }
     /* header div и header div p -- селекторы потомств */
@@ -98,6 +98,10 @@ if (isset($_POST['R']) && isset($_POST['X']) && isset($_POST['Y'])) {
         background-color: black;
         color: violet;
     }
+      .xClicked:checked{
+          background-color: black;
+          color: #7df9ff;
+      }
       #yTextField {
           text-align: center;
           background-color: black;
@@ -115,12 +119,14 @@ if (isset($_POST['R']) && isset($_POST['X']) && isset($_POST['Y'])) {
     .rRadio:hover{
        cursor: pointer;
     }
+
 .clickedElement:hover{
     border-image-slice: 1;
     border-width: 2px;
     border-style: solid;
     border-image-source: linear-gradient(to left, #fe019a , #7df9ff);
 }
+
 
 /* селектор дочерних классов */
       td > input{
@@ -173,7 +179,7 @@ if (isset($_POST['R']) && isset($_POST['X']) && isset($_POST['Y'])) {
 <!-- В main содержится основная информация о странице  -->
 <main>
     <!-- В form будут собираться данные для отправки на сервер, скрипт, которому передается управление, в action указан  -->
-    <form action="my_first_page.php" method="post">
+    <form id="subForm" onsubmit="return validateForm()" action="my_first_page.php" method="post" >
         <!-- Табличная верстка летс гоу  -->
         <!-- Основная таблица -->
         <table>
@@ -365,7 +371,7 @@ if (isset($_POST['R']) && isset($_POST['X']) && isset($_POST['Y'])) {
                                 <span class="clickedElement">
                                                 <input class="rRadio" type="radio" name="R" tabindex="1"
                                                        placeholder="Параметр R"
-                                                       value="1" required>
+                                                       value="1" >
                                                 <span>1</span>
                                             </span>
                                             <span class="clickedElement">
@@ -407,21 +413,18 @@ if (isset($_POST['R']) && isset($_POST['X']) && isset($_POST['Y'])) {
 
                             </td>
                         </tr>
+                        <tr>
+                            <td>
+                                <span id="error"></span>
+                            </td>
+                        </tr>
                     </table>
 
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <!-- Таблица с предыдущими результатами  -->
-                    <table>
-
-                    </table>
                 </td>
             </tr>
         </table>
-
-
     </form>
+</main>
+<script src="src/val.js"></script>
 </body>
 </html>
