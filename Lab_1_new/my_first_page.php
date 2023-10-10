@@ -1,3 +1,12 @@
+<?php
+include "script.php";
+
+if (isset($_POST['R']) && isset($_POST['X']) && isset($_POST['Y'])) {
+    $start = microtime(true) * 1000000;
+    $is_hit = isHit();
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <!-- Внутри head находится блок служебной информации  -->
@@ -119,6 +128,10 @@
       }
       #paddingPic{
           padding-left: 200px;
+         color: #7df9ff;
+          font-size: 25px;
+          font-family: Cursive;
+          text-align: center;
       }
       span{
           background-image: linear-gradient(to right, #7df9ff, #fe019a);
@@ -160,7 +173,7 @@
 <!-- В main содержится основная информация о странице  -->
 <main>
     <!-- В form будут собираться данные для отправки на сервер, скрипт, которому передается управление, в action указан  -->
-    <form action="handler.php" method="post">
+    <form action="my_first_page.php" method="post">
         <!-- Табличная верстка летс гоу  -->
         <!-- Основная таблица -->
         <table>
@@ -170,7 +183,7 @@
                        <tr>
                            <!--  Здесь должна быть картинка   -->
                            <td>
-                               <img src="ros_area.png" id="paddingPic">
+                               <img src="ros_area.png" id="paddingPic" alt="А график? ^. .^ &#128148;">
                            </td>
                            <td>
                                <!-- Таблица с последним результатом  -->
@@ -186,6 +199,14 @@
                                        </td>
                                        <td>
                                            <!-- Здесь должен быть ответ -->
+                                           <?php if(isset($is_hit)) {
+                                               if ($is_hit === "true") {
+                                                   echo "<span>" ."Да".  "</span>";
+                                               } else {
+                                                   echo "<span>" ."Нет".  "</span>";
+                                               }
+                                           }
+                                           ?>
                                        </td>
                                    </tr>
                                    <tr>
@@ -194,6 +215,10 @@
                                        </td>
                                        <td>
                                            <!-- Здесь должен быть ответ -->
+                                           <?php if(isset($is_hit)) {
+                                               echo "<span>" .$_POST['X'].  "</span>";
+                                           }
+                                           ?>
                                        </td>
                                    </tr>
                                    <tr>
@@ -202,6 +227,10 @@
                                        </td>
                                        <td>
                                            <!-- Здесь должен быть ответ -->
+                                           <?php if(isset($is_hit)) {
+                                               echo "<span>" .$_POST['Y'].  "</span>";
+                                           }
+                                           ?>
                                        </td>
                                    </tr>
                                    <tr>
@@ -210,6 +239,10 @@
                                        </td>
                                        <td>
                                            <!-- Здесь должен быть ответ -->
+                                           <?php if(isset($is_hit)) {
+                                               echo "<span>" .$_POST['R'].  "</span>";
+                                           }
+                                           ?>
                                        </td>
                                    </tr>
                                    <tr>
@@ -218,6 +251,11 @@
                                        </td>
                                        <td>
                                            <!-- Здесь должен быть ответ -->
+                                           <?php if(isset($is_hit)) {
+                                               $now = date('H:i:s');
+                                               echo "<span>" .$now.  "</span>";
+                                           }
+                                           ?>
                                        </td>
                                    </tr>
                                    <tr>
@@ -226,6 +264,11 @@
                                        </td>
                                        <td>
                                            <!-- Здесь должен быть ответ -->
+                                           <?php if(isset($is_hit)) {
+                                               $stop = microtime(true) * 1000000;
+                                               echo "<span>" .($stop - $start). "мкс" . "</span>";
+                                           }
+                                           ?>
                                        </td>
                                    </tr>
                                </table>
@@ -234,10 +277,7 @@
                                <!-- Таблица с предыдущими результатами  -->
                                <table class="resPadding">
                                      <tr>
-
-                                              <span id="prevAnswersText">Предыдущие результаты:</span>
-
-
+                                         <span id="prevAnswersText">Предыдущие результаты:</span>
                                      </tr>
                                    <tr>
                                        <td>
@@ -359,7 +399,7 @@
                         </tr>
                         <tr class="paddingEl">
                             <td class="submit paddingEl" >
-                                <input class="submitButton" type="submit" value="Проверить точку" disabled />
+                                <input class="submitButton" type="submit" value="Проверить точку"  />
 
                             </td>
                             <td class="submit">
