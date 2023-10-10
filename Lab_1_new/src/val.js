@@ -15,7 +15,9 @@ function validateForm() {
 
 function xChecker() {
     let chosen = false;
+
 // ЭТО КОСТЫЛЬ(  НАВЕРНОЕ, ЭТО МОЖНО СДЕЛАТЬ ПО-УМНОМУ
+
     let a = document.getElementById("xSelectorStyle").value;
     switch(a){
         case "-4": chosen = true; break;
@@ -48,6 +50,11 @@ function yChecker() {
     if (isNaN(yText.value)) {
         let error = document.getElementById("error");
         error.innerText = error.innerText + "¡Значение Y должно быть числом! \n"
+        return false;
+    }
+    if ((yText.value <= -5) || (yText.value >= 3)) {
+        let error = document.getElementById("error");
+        error.innerText = error.innerText + "¡Значение Y должно принадлежать интервалу (-5, 3)! \n"
         return false;
     }
     return true;

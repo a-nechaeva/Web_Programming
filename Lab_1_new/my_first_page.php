@@ -164,6 +164,12 @@ if (isset($_POST['R']) && isset($_POST['X']) && isset($_POST['Y'])) {
       #prevAnswersText{
           padding-left: 200px;
       }
+      /*
+      #error{
+          padding-left: 200px;
+      }
+
+       */
 
 
   </style>
