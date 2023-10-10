@@ -4,6 +4,7 @@ function validateForm() {
     let xChecked = xChecker();
     let yChecked = yChecker();
     let rChecked = rChecker();
+    return false;
 
 }
 
@@ -31,6 +32,7 @@ function rChecker() {
         error.innerText = error.innerText + "Выберите значение R \n";
 
         */
+        alert("Выберите значение R \\n");
         var e = "Выберите значение R \\n";
         document.getElementById("error").innerHTML = e;
 

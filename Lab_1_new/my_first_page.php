@@ -17,7 +17,7 @@ if (isset($_POST['R']) && isset($_POST['X']) && isset($_POST['Y'])) {
   <!-- Здесь будем задавать стиль на CSS -->
   <style>
       body {
-          background-color: white;
+          background-color: black;
           cursor: auto;
       }
     /* header div и header div p -- селекторы потомств */
@@ -126,6 +126,8 @@ if (isset($_POST['R']) && isset($_POST['X']) && isset($_POST['Y'])) {
     border-style: solid;
     border-image-source: linear-gradient(to left, #fe019a , #7df9ff);
 }
+
+
 
 
 /* селектор дочерних классов */
@@ -326,7 +328,7 @@ if (isset($_POST['R']) && isset($_POST['X']) && isset($_POST['Y'])) {
                                     </tr>
                                     <tr>
                                         <td class="paddingEl">
-                                            <select name="X" id = "xSelectorStyle"  required = "required" size="3">
+                                            <select name="X" id = "xSelectorStyle" size="3" >
                                                 <option class="xClicked" value="-4">-4</option>
                                                 <option class="xClicked" value="-3">-3</option>
                                                 <option class="xClicked" value="-2">-2</option>
@@ -352,7 +354,7 @@ if (isset($_POST['R']) && isset($_POST['X']) && isset($_POST['Y'])) {
                                         <td class="paddingEl">
                                             <input id="yTextField" class="selectingAreas" type="text" name="Y"
                                                    tabindex="3"
-                                                   placeholder="(-5;3)" required>
+                                                   placeholder="(-5;3)">
                                         </td>
                                     </tr>
                                 </table>
@@ -403,6 +405,11 @@ if (isset($_POST['R']) && isset($_POST['X']) && isset($_POST['Y'])) {
                                 </table>
                             </td>
                         </tr>
+                        <tr>
+                            <td>
+                                <span id="error"></span>
+                            </td>
+                        </tr>
                         <tr class="paddingEl">
                             <td class="submit paddingEl" >
                                 <input class="submitButton" type="submit" value="Проверить точку"  />
@@ -413,11 +420,7 @@ if (isset($_POST['R']) && isset($_POST['X']) && isset($_POST['Y'])) {
 
                             </td>
                         </tr>
-                        <tr>
-                            <td>
-                                <span id="error"></span>
-                            </td>
-                        </tr>
+
                     </table>
 
                 </td>
