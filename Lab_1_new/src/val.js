@@ -59,7 +59,6 @@ function saveLastReq(){
             let requestElements = request.getElementsByClassName("parameter");
 
             for (let element of requestElements) {
-                console.log("parameter");
                 inputValue += element.innerText + ",";
             }
             inputValue = inputValue.replace(/.$/, ";");
@@ -67,9 +66,6 @@ function saveLastReq(){
         inputValue = inputValue.replace(/.$/, "");
     }
 
-    if (inputValue.charAt(inputValue.length - 1) === ";") {
-       // inputValue = inputValue.replace(/.$/, "");
-    }
     return inputValue;
 }
 
