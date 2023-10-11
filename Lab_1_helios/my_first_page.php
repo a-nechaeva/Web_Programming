@@ -61,13 +61,7 @@ if (isset($_POST['R']) && isset($_POST['X']) && isset($_POST['Y'])) {
     }
 
 
-    #submitButton{
-        background-image: linear-gradient(to right, #69b7eb, #b3dbd3, #f4d6db);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-size: 25px;
-    }
-    #clear{
+    .submitButton{
         background-image: linear-gradient(to right, #69b7eb, #b3dbd3, #f4d6db);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -156,14 +150,6 @@ if (isset($_POST['R']) && isset($_POST['X']) && isset($_POST['Y'])) {
           font-family: Cursive;
           text-align: center;
       }
-      #reqTable{
-          background-image: linear-gradient(to right,#69b7eb, #b3dbd3, #f4d6db);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          font-size: 20px;
-          font-family: Cursive;
-          text-align: center;
-      }
       .resText{
           text-align: center;
           font-size: 30px;
@@ -202,7 +188,7 @@ if (isset($_POST['R']) && isset($_POST['X']) && isset($_POST['Y'])) {
 <!-- В main содержится основная информация о странице  -->
 <main>
     <!-- В form будут собираться данные для отправки на сервер, скрипт, которому передается управление, в action указан  -->
-    <form id="subForm" onsubmit="return validateForm()" action="" method="post" >
+    <form id="subForm" onsubmit="return validateForm()" action="my_first_page.php" method="post" >
         <!-- Табличная верстка летс гоу  -->
         <!-- Основная таблица -->
         <table>
@@ -219,12 +205,12 @@ if (isset($_POST['R']) && isset($_POST['X']) && isset($_POST['Y'])) {
                                <table class="resPadding">
                                       <tr>
                                           <td>
-                                         <!--     <span class="resText">Результат:</span> -->
+                                              <span class="resText">Результат:</span>
                                           </td>
                                       </tr>
                                    <tr>
                                        <td>
-                                        <!--   <span>Попала?</span> -->
+                                           <span>Попала?</span>
                                        </td>
                                        <td >
                                            <!-- Здесь должен быть ответ -->
@@ -240,7 +226,7 @@ if (isset($_POST['R']) && isset($_POST['X']) && isset($_POST['Y'])) {
                                    </tr>
                                    <tr>
                                        <td>
-                                         <!--  <span>X = </span> -->
+                                           <span>X = </span>
                                        </td>
                                        <td>
                                            <!-- Здесь должен быть ответ -->
@@ -252,7 +238,7 @@ if (isset($_POST['R']) && isset($_POST['X']) && isset($_POST['Y'])) {
                                    </tr>
                                    <tr>
                                        <td>
-                                         <!--  <span>Y = </span> -->
+                                           <span>Y = </span>
                                        </td>
                                        <td >
                                            <!-- Здесь должен быть ответ -->
@@ -264,7 +250,7 @@ if (isset($_POST['R']) && isset($_POST['X']) && isset($_POST['Y'])) {
                                    </tr>
                                    <tr>
                                        <td>
-                                        <!--   <span>R = </span> -->
+                                           <span>R = </span>
                                        </td>
                                        <td >
                                            <!-- Здесь должен быть ответ -->
@@ -276,7 +262,7 @@ if (isset($_POST['R']) && isset($_POST['X']) && isset($_POST['Y'])) {
                                    </tr>
                                    <tr>
                                        <td>
-                                       <!--    <span>Текущее время: </span> -->
+                                           <span>Текущее время: </span>
                                        </td>
                                        <td >
                                            <!-- Здесь должен быть ответ -->
@@ -289,7 +275,7 @@ if (isset($_POST['R']) && isset($_POST['X']) && isset($_POST['Y'])) {
                                    </tr>
                                    <tr>
                                        <td>
-                                       <!--    <span>Время работы скрипта: </span> -->
+                                           <span>Время работы скрипта: </span>
                                        </td>
                                        <td >
                                            <!-- Здесь должен быть ответ -->
@@ -328,11 +314,6 @@ if (isset($_POST['R']) && isset($_POST['X']) && isset($_POST['Y'])) {
                                            <span>Время работы</span>
                                        </td>
                                    </tr>
-
-                                           <table id="reqTable" class="resPadding">
-
-                                           </table>
-
 
                                    <?php
                                    if (isset($_POST['savedRequests'])) {
@@ -457,11 +438,11 @@ if (isset($_POST['R']) && isset($_POST['X']) && isset($_POST['Y'])) {
                         </tr>
                         <tr class="paddingEl">
                             <td class="submit paddingEl" >
-                                <input id="submitButton" type="submit" value="Проверить точку"  />
+                                <input class="submitButton" type="submit" value="Проверить точку"  />
 
                             </td>
-                           <!-- <td class="submit paddingEl">
-                                <input id="clear" id="submitButton" type="submit" value="Очистить таблицу" />
+                           <!-- <td class="submit">
+                                <input class="submitButton" type="submit" value="Очистить таблицу" />
 
                             </td> -->
                         </tr>
@@ -471,8 +452,6 @@ if (isset($_POST['R']) && isset($_POST['X']) && isset($_POST['Y'])) {
         </table>
     </form>
 </main>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="src/new_val.js"></script>
-<script src="src/val.js"></script>
+<script src="val.js"></script>
 </body>
 </html>
