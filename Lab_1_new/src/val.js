@@ -32,7 +32,7 @@ function saveLastReq(){
     let inputValue = "";
 
     if (!(document.getElementById("didHit") === null)) {
-        /*
+
         let resultOfHitting = document.getElementById("didHit");
         let resultX = document.getElementById("xAnswer");
         let resultY = document.getElementById("yAnswer");
@@ -41,13 +41,6 @@ function saveLastReq(){
         let resultWorkTime = document.getElementById("workTime");
 
 
-         */
-       /* inputValue += resultOfHitting.innerText + "," + resultX.innerText + "," +
-            resultY.innerText + "," + resultR.innerText + "," + resultTime.innerText + "," +
-            resultWorkTime.innerText + ",";
-
-        */
-        /*
         inputValue += resultOfHitting.innerText + ",";
         inputValue += resultX.innerText + ",";
         inputValue += resultY.innerText + ",";
@@ -56,11 +49,6 @@ function saveLastReq(){
         inputValue += resultWorkTime.innerText + ",";
         inputValue = inputValue.replace(/.$/, ";");
 
-         */
-        let answerElements = document.getElementsByClassName("answer");
-        for (let answerElement of answerElements) {
-            inputValue += answerElement.innerText + ",";
-        }
         inputValue = inputValue.replace(/.$/, ";");
     }
 
