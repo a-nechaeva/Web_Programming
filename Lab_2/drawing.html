@@ -13,70 +13,7 @@
       ) {
         var context =
                 drawingCanvas.getContext('2d');
-        // Рисуем окружность
-        /*
-        context.strokeStyle = '#000';
-        context.fillStyle = '#fc0';
-        context.beginPath();
-        context.arc(
-                100,
-                100,
-                50,
-                0,
-                Math.PI * 2,
-                true,
-        );
-        context.closePath();
-        context.stroke();
-        context.fill();
-        // Рисуем левый глаз
-        context.fillStyle = '#fff';
-        context.beginPath();
-        context.arc(
-                84,
-                90,
-                8,
-                0,
-                Math.PI * 2,
-                true,
-        );
-        context.closePath();
-        context.stroke();
-        context.fill();
-        // Рисуем правый глаз
-        context.beginPath();
-        context.arc(
-                116,
-                90,
-                8,
-                0,
-                Math.PI * 2,
-                true,
-        );
-        context.closePath();
-        context.stroke();
-        context.fill();
-        // Рисуем рот
-        context.beginPath();
-        context.moveTo(70, 115);
-        context.quadraticCurveTo(
-                100,
-                130,
-                130,
-                115,
-        );
-        context.quadraticCurveTo(
-                100,
-                150,
-                70,
-                115,
-        );
-        context.closePath();
-        context.stroke();
-        context.fill();
 
-
-         */
         //рамочка
 
         context.beginPath();
@@ -89,7 +26,6 @@
         context.strokeStyle = '#87CEFA'; // тёмно-синий цвет
         context.lineWidth = 5; // толщина линии в 5px
         context.stroke();
-        // draw line
 
 
         // рисуем прямоугольник
@@ -194,6 +130,19 @@
         context.strokeStyle = '#000000';
         context.lineWidth = 2;
         context.stroke();
+
+        // подписи засечек
+        context.font = "22px Verdana";
+        context.fillStyle = '#000000';
+        context.lineWidth = 1;
+        context.fillText("R/2", 394, 290);
+        context.fillText("R/2", 260, 204);
+        context.fillText("-R/2", 184, 290);
+        context.fillText("-R/2", 250, 430);
+        context.fillText("-R", 260, 510);
+        context.fillText("-R", 90, 290);
+        context.fillText("R", 495, 290);
+        context.fillText("R", 280, 110);
       }
     };
   </script>
