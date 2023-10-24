@@ -1,14 +1,15 @@
 
-var canvas = document.getElementById("ex");
-var ctx = canvas.getContext("2d");
+var canvas = document.getElementById('ex');
+var ctx = canvas.getContext('2d');
 
 
 ctx.beginPath();
 ctx.rect(20, 20, 100, 50);
 ctx.fillStyle = "#000000";
-ctx.fill();
+
 ctx.closePath();
 ctx.stroke();
+ctx.fill();
 
 
 canvas.addEventListener("click", function (event) {
