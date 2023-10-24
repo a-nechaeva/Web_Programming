@@ -3,35 +3,14 @@ var  drawingCanvas;
 var pointsX = [];
 var pointsY = [];
 
-var points_length = 0;
 
 window.onload = function () {
      drawingCanvas =
         document.getElementById('graph');
 
     drawWithPoint();
-   // drawingCanvas.onclick = canvasClick;
-   // drawWithPoint();
 
 }
-
-// обработка кликов пользователя по изображению
-
-function canvasClick(e) {
-
-    // получаем координаты точки холста, в которую щелкнули, сразу с учетом сдвига осей
-    var clickX = e.pageX - drawingCanvas.offsetLeft - 4;
-    var clickY = e.pageY - drawingCanvas.offsetTop - 4;
-
-    points[points_length][0] = e.pageX;
-    points[points_length][1] = e.pageY;
-    points_length = points_length + 1;
-    drawWithPoint();
-
-}
-
-
-
 
 function drawWithPoint() {
     drawingCanvas =
@@ -39,6 +18,9 @@ function drawWithPoint() {
 
         var context =
             drawingCanvas.getContext('2d');
+    gradient = context.createRadialGradient(304, 304, 40, 304, 304, 200);
+    gradient.addColorStop(0, "#69b7eb");
+    gradient.addColorStop(1, "#f4d6db");
 
 
         //рамочка
@@ -49,7 +31,7 @@ function drawWithPoint() {
         context.lineTo(2, 606); // линия влево
         context.lineTo(2, 2); // линия вверх
         //context.closePath(); // смыкание начала и конца рисунка (левая стена)
-        context.strokeStyle = '#87CEFA'; // тёмно-синий цвет
+        context.strokeStyle = '#f4d6db'; // цвет
         context.lineWidth = 5; // толщина линии в 5px
         context.fillStyle = '#FFFAFA';
         context.fill();
@@ -63,7 +45,8 @@ function drawWithPoint() {
         context.lineTo(104, 404);
         context.lineTo(104, 304);
         context.lineTo(304, 304);
-        context.fillStyle = '#4682B4';
+       // context.fillStyle = '#4682B4';
+        context.fillStyle = gradient;
         context.strokeStyle = '#4682B4';
         context.lineWidth = 1;
         //context.closePath();
@@ -177,16 +160,15 @@ function drawWithPoint() {
             var yP = pointsY[i];
 
             context.beginPath();
-            context.arc(xP, yP, 10, 0, Math.PI * 2);
+            context.arc(xP, yP, 5, 0, Math.PI * 2);
+
             if (i === (pointsX.length - 1)) {
                 context.fillStyle = '#000000';
-                context.stroke();
-                context.fill();
             } else {
-                context.fillStyle = '#2F4F4F';
-                context.stroke();
-                context.fill();
+                context.fillStyle = '#778899';
             }
+            context.stroke();
+            context.fill();
 
 
         }
@@ -201,20 +183,30 @@ function drawWithPoint() {
 
         var x = xTr - rect.left;
         var y = yTr - rect.top;
-/*
-        context.beginPath();
-        context.arc(xTr, yTr, 10, 0, Math.PI * 2);
-        context.fillStyle = '#000000';
-        context.stroke();
-        context.fill();
-
- */
 
 
-
-        pointsX.push(xTr);
-        pointsY.push(yTr);
-       // points_length = points_length + 1;
+        pointsX.push(x);
+        pointsY.push(y);
         drawWithPoint();
     });
 }
+
+
+
+
+// обработка кликов пользователя по изображению
+/*
+function canvasClick(e) {
+
+// получаем координаты точки холста, в которую щелкнули, сразу с учетом сдвига осей
+var clickX = e.pageX - drawingCanvas.offsetLeft - 4;
+var clickY = e.pageY - drawingCanvas.offsetTop - 4;
+
+points[points_length][0] = e.pageX;
+points[points_length][1] = e.pageY;
+points_length = points_length + 1;
+drawWithPoint();
+
+}
+
+ */
