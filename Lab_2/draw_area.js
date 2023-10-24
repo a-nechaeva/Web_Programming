@@ -173,7 +173,6 @@ function drawWithPoint() {
 
         }
 
-
         drawingCanvas.addEventListener("click", function(event) {
 
         // получили позицию холста на странице
@@ -183,14 +182,88 @@ function drawWithPoint() {
 
         var x = xTr - rect.left;
         var y = yTr - rect.top;
-
-
-        pointsX.push(x);
-        pointsY.push(y);
+        let error = document.getElementById("error");
+        if (rClicked) {
+            pointsX.push(x);
+            pointsY.push(y);
+            rClicked = false;
+            error.innerText = "";
+        } else {
+            error.innerText = "¡Пожалуйста, выберите значение R!";
+        }
+        
         drawWithPoint();
     });
 }
 
+// да, это костыль, и его по-хорошему нужно убирать
+var rClicked = false;
+
+let r1 = document.getElementById("b1");
+r1.onclick = function () {
+    rClicked = true;
+};
+
+let r15 = document.getElementById("b1.5");
+r15.onclick = function () {
+    rClicked = true;
+};
+
+let r2 = document.getElementById("b2");
+r2.onclick = function () {
+    rClicked = true;
+};
+
+let r25 = document.getElementById("b2.5");
+r25.onclick = function () {
+    rClicked = true;
+};
+
+let r3 = document.getElementById("b3");
+r3.onclick = function () {
+    rClicked = true;
+};
+
+
+// Проверка того, что установлено значение радиуса
+function rChecker() {
+
+    if (!rClicked) {
+        let error = document.getElementById("error");
+        error.innerText = error.innerText + "¡Пожалуйста, выберите значение R! \n";
+        return false;
+    }
+    return true;
+
+
+}
+
+function xChecker() {
+    let chosen = false;
+
+// ЭТО КОСТЫЛЬ(  НАВЕРНОЕ, ЭТО МОЖНО СДЕЛАТЬ ПО-УМНОМУ
+
+    let a = document.getElementById("xSelectorStyle").value;
+    switch(a){
+        case "-4": chosen = true; break;
+        case "-3": chosen = true; break;
+        case "-2": chosen = true; break;
+        case "-1": chosen = true; break;
+        case "0": chosen = true; break;
+        case "1": chosen = true; break;
+        case "2": chosen = true; break;
+        case "3": chosen = true; break;
+        case "4": chosen = true; break;
+        default: chosen = false;
+    }
+    if (!chosen) {
+        let error = document.getElementById("error");
+        error.innerText = error.innerText + "¡Пожалуйста, выберите значение X! \n";
+        return false;
+    }
+    return true;
+
+}
 
 
 

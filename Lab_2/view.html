@@ -171,6 +171,7 @@
         #prevAnswersText{
             padding-left: 200px;
         }
+
         /*
         #error{
             padding-left: 200px;
@@ -194,7 +195,7 @@
 <!-- В main содержится основная информация о странице  -->
 <main>
     <!-- В form будут собираться данные для отправки на сервер, скрипт, которому передается управление, в action указан  -->
-    <form id="subForm" onsubmit="return validateForm()" action="src/ControllerServlet.java" method="post" >
+    <form id="subForm" onsubmit="return validateForm()"  method="post" >
         <!-- Табличная верстка летс гоу  -->
         <!-- Основная таблица -->
         <table>
@@ -410,35 +411,35 @@
                                 </tr>
                                 <tr>
                                     <td class="paddingEl">
-                                <span class="clickedElement">
-                                                <input class="rRadio" type="button" name="R" tabindex="1"
+                                            <span class="clickedElement">
+                                                <button id ="b1" class="rRadio" type="button"  name="R" tabindex="1"
                                                        placeholder="Параметр R"
                                                        value="1" >
-                                                <span>1</span>
+                                                <span>1</span></button>
                                             </span>
                                         <span class="clickedElement">
-                                                <input class="rRadio" type="button" name="R" tabindex="1"
-                                                       placeholder="Параметр R"
-                                                       value="1.5">
-                                                <span>1.5</span>
+                                                <button id ="b1.5" class="rRadio" type="button"  name="R" tabindex="1"
+                                                        placeholder="Параметр R"
+                                                        value="1.5" >
+                                                <span>1.5</span></button>
                                             </span>
                                         <span class="clickedElement">
-                                                <input class="rRadio" type="button" name="R" tabindex="1"
-                                                       placeholder="Параметр R"
-                                                       value="2">
-                                                <span>2</span>
+                                                <button  id ="b2" class="rRadio" type="button"  name="R" tabindex="1"
+                                                        placeholder="Параметр R"
+                                                        value="2" >
+                                                <span>2</span></button>
                                             </span>
                                         <span class="clickedElement">
-                                                <input class="rRadio" type="button" name="R" tabindex="1"
-                                                       placeholder="Параметр R"
-                                                       value="2.5">
-                                                <span>2.5</span>
+                                                <button id ="b2.5" class="rRadio" type="button"  name="R" tabindex="1"
+                                                        placeholder="Параметр R"
+                                                        value="2.5" >
+                                                <span>2.5</span></button>
                                             </span>
                                         <span class="clickedElement">
-                                                <input class="rRadio" type="button" name="R" tabindex="1"
-                                                       placeholder="Параметр R"
-                                                       value="3">
-                                                <span>3</span>
+                                                <button id = "b3" class="rRadio" type="button"  name="R" tabindex="1"
+                                                        placeholder="Параметр R"
+                                                        value="3" >
+                                                <span>3</span></button>
                                             </span>
                                     </td>
                                 </tr>
