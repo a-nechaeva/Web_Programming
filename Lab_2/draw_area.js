@@ -191,7 +191,7 @@ function drawWithPoint() {
         } else {
             error.innerText = "¡Пожалуйста, выберите значение R!";
         }
-        
+
         drawWithPoint();
     });
 }
@@ -240,8 +240,7 @@ function rChecker() {
 
 function xChecker() {
     let chosen = false;
-
-// ЭТО КОСТЫЛЬ(  НАВЕРНОЕ, ЭТО МОЖНО СДЕЛАТЬ ПО-УМНОМУ
+    
 
     let a = document.getElementById("xSelectorStyle").value;
     switch(a){
