@@ -1,19 +1,13 @@
-<!doctype html>
-<html>
-<head>
-  <title>canvas</title>
-  <meta charset="utf-8" />
-  <script>
-    /*
-    window.onload = function () {
-      var drawingCanvas =
-              document.getElementById('smile');
-      if (
-              drawingCanvas &&
-              drawingCanvas.getContext
-      ) {
+window.onload = function () {
+    var drawingCanvas =
+        document.getElementById('graph');
+    if (
+        drawingCanvas &&
+        drawingCanvas.getContext
+    ) {
         var context =
-                drawingCanvas.getContext('2d');
+            drawingCanvas.getContext('2d');
+
 
         //рамочка
 
@@ -26,6 +20,8 @@
         //context.closePath(); // смыкание начала и конца рисунка (левая стена)
         context.strokeStyle = '#87CEFA'; // тёмно-синий цвет
         context.lineWidth = 5; // толщина линии в 5px
+        context.fillStyle = '#FFFAFA';
+        context.fill();
         context.stroke();
 
 
@@ -144,17 +140,6 @@
         context.fillText("-R", 90, 290);
         context.fillText("R", 495, 290);
         context.fillText("R", 280, 110);
-      }
-    };
+    }
+};
 
-     */
-  </script>
-  <script src="draw_area.js"></script>
-</head>
-<body>
-
-<canvas id="graph" width="650" height="650">
-  <p>Ваш браузер не поддерживает рисование.</p>
-</canvas>
-</body>
-</html>

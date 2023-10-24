@@ -204,7 +204,10 @@
                         <tr>
                             <!--  Здесь должна быть картинка   -->
                             <td>
-                                <img src="light_blue.png" id="paddingPic" alt="А график? ^. .^ &#128148;">
+                               <!-- <img src="light_blue.png" id="paddingPic" alt="А график? ^. .^ &#128148;"> -->
+                                <canvas id="graph" width="650" height="650">
+                                    <p>Ваш браузер не поддерживает рисование.</p>
+                                </canvas>
                             </td>
                             <td>
                                 <!-- Таблица с последним результатом  -->
@@ -466,5 +469,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="src/new_val.js"></script>
 <script src="src/val.js"></script>
+<script src="draw_area.js"></script>
 </body>
 </html>
