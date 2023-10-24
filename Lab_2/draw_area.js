@@ -240,7 +240,7 @@ function rChecker() {
 
 function xChecker() {
     let chosen = false;
-    
+
 
     let a = document.getElementById("xSelectorStyle").value;
     switch(a){

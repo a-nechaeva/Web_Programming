@@ -1,4 +1,9 @@
-
+<%@ page import="java.io.File" %>
+<%@ page import="java.io.ByteArrayOutputStream" %>
+<%@ page import="java.net.URLDecoder" %>
+<%@ page import="java.io.IOException" %>
+<%@ page import="java.awt.*" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <!-- Внутри head находится блок служебной информации  -->
@@ -346,6 +351,23 @@
                                     echo "</table>";
                                 }
                                 ?>
+                        <%
+                        //ПЕРЕДЕЛАТЬ ЧЕРЕЗ КОНТЕКСТЫ ПРИЛОЖЕНИЯ!!!
+                                    if (request.getSession().getAttribute("lastRequest") != null) {
+                                        out.print("<table id='reqTable' class='resPadding'>");
+                                        String lastRequests = (String) (request.getSession().getAttribute("lastRequests"));
+                                        String[] requests = lastRequests.split(";");
+                                        for (String req : requests) {
+                                            String[] reqParameters = req.split(",");
+                                            out.print("<tr class='request'>");
+                                            for (String param : reqParameters) {
+                                                out.print("<td class='inTableResPadding'> <span class='parameter'>" + param +  "</span></td>");
+                                            }
+                                            out.print("</tr>");
+                                        }
+                                        out.print("</table>");
+                                    }
+                        %>
 
                     </table>
                 </td>
