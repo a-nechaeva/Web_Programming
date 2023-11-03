@@ -7,9 +7,9 @@ var cordX
 var cordY
 
 function gotData() {
-    if (request.readyState == 4) {
+    if (request.readyState === 4) {
         let status = request.status;
-        if (status == 200) {
+        if (status === 200) {
             document.getElementById("reqTable").innerHTML = request.responseText
         }
     }
@@ -29,7 +29,7 @@ function setCoordinates(){
 }
 
 document.addEventListener('click', function (e) {
-    if (e.target.getAttribute('id') == 'clrBtn') {
+    if (e.target.getAttribute('id') === 'clrBtn') {
         sendRequestClear()
         unsetVisiblePoint()
     }
@@ -226,17 +226,7 @@ function checkR(r) {
 
 }
 
-function rChecker() {
 
-    if (!rClicked) {
-        let error = document.getElementById("error");
-        error.innerText = error.innerText + "¡Пожалуйста, выберите значение R! \n";
-        return false;
-    }
-    return true;
-
-
-}
 
 // да, это костыль, и его по-хорошему нужно убирать
 var rClicked = false;
@@ -490,8 +480,8 @@ function xChecker() {
         default: chosen = false;
     }
     if (!chosen) {
-        let error = document.getElementById("error");
-        error.innerText = error.innerText + "¡Пожалуйста, выберите значение X! \n";
+        let error = document.getElementById("exceptionFieldX");
+        error.innerText = "¡Пожалуйста, выберите значение X! \n";
         return false;
     }
     return true;
