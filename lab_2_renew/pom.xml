@@ -4,10 +4,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.example</groupId>
-    <artifactId>lab2</artifactId>
+    <groupId>com.Anna</groupId>
+    <artifactId>lab_2_renew</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>lab2</name>
+    <name>lab_2_renew</name>
     <packaging>war</packaging>
 
     <properties>
@@ -18,12 +18,6 @@
     </properties>
 
     <dependencies>
-       <!-- <dependency>
-            <groupId>javax</groupId>
-            <artifactId>javaee-web-api</artifactId>
-            <version>8.0.1</version>
-            <scope>provided</scope>
-        </dependency>-->
         <dependency>
             <groupId>jakarta.servlet</groupId>
             <artifactId>jakarta.servlet-api</artifactId>
@@ -42,11 +36,6 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
-        <!--<dependency>
-            <groupId>javax</groupId>
-            <artifactId>javaee-web-api</artifactId>
-            <version>8.0.1</version>
-        </dependency> -->
     </dependencies>
 
     <build>

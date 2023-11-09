@@ -36,7 +36,7 @@
     LinkedList<String> answer = (LinkedList<String>) context.getAttribute("answer");
     for (String s : answer) {
       //out.write("s");
-      
+
     }
   %>
 
