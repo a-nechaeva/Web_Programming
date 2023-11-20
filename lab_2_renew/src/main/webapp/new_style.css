@@ -42,6 +42,9 @@ header span {
 .borderName{
     background: rgba(65,65,65, 0.3);
 }
+svg {
+    background: rgba(255,255,255, 0.3);
+}
 .specialArea{
     background: linear-gradient(to bottom, rgba(65,65,65, 0.9), rgba(65,65,65, 0));
 }
