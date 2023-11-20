@@ -76,7 +76,8 @@ document.querySelectorAll('.input', '.button').forEach(function (item) {
 function getFormData() {
     let form = document.getElementById("form")
     y = form.y.value.replace(",", ".")
-    r = form.r.value
+   // r = form.r.value
+    r = form.r.value.replace(",", ".")
     x = form.x.value
 }
 
@@ -153,15 +154,15 @@ function convertCoordinates() {
 }
 
 function convertCoordinate(coord){
-    return (coord/120)*r;
+    return (coord/240)*r;
 }
 
 function convertToCoordinate(value){
-    return (value*120)/r;
+    return (value*240)/r;
 }
 
 function changeXCord(){
-    let centerX = 150
+    let centerX = 300
     if (cordX < centerX){
         cordX = -(centerX-cordX)
     }else{
@@ -178,12 +179,18 @@ function changeYCord(){
     }
 }
 
-function checkChoseR() {
+/*function checkChoseR() {
     let form = document.getElementById('form')
     r = form.r.value
     return checkR(r);
 }
 
+ */
+function checkChoseR() {
+    let form = document.getElementById('form')
+    r = form.r.value.replace(",", ".")
+    return checkR(r);
+}
 function checkY(y) {
     let exceptionFieldY = document.getElementById('exceptionFieldY')
 
@@ -216,13 +223,35 @@ function checkX(x) {
     }
 }
 
-function checkR(r) {
+/*function checkR(r) {
     let exceptionFieldX = document.getElementById('exceptionFieldX')
     if (!isNumber(r)) {
         exceptionFieldX.innerText = "Выберите значение R"
         return false
     } else {
         exceptionFieldX.innerText = ""
+        return true
+
+    }
+}
+
+ */
+
+function checkR(r) {
+    let exceptionFieldR = document.getElementById('exceptionFieldR')
+
+    if (r.length == 0) {
+        exceptionFieldR.innerText = "Поле R не может быть пустым"
+        return false
+
+    } else if (!isNumber(r)) {
+        exceptionFieldR.innerText = "Поле R должно быть числом"
+        return false
+    } else if (!(r < 5 && r > 2)) {
+        exceptionFieldR.innerText = "Поле R должно быть (2;5)"
+        return false
+    } else {
+        exceptionFieldR.innerText = ""
         return true
 
     }
