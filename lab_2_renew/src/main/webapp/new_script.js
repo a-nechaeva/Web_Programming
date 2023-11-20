@@ -60,7 +60,7 @@ function sendRequestClear() {
     request.send();
 }
 
-document.querySelectorAll('.input').forEach(function (item) {
+document.querySelectorAll('.input', '.button').forEach(function (item) {
     item.addEventListener("keydown", function (event) {
         if (event.keyCode == 13) {
             event.preventDefault()
