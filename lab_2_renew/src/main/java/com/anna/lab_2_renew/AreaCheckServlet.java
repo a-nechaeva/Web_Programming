@@ -70,14 +70,14 @@ public class AreaCheckServlet extends HttpServlet {
 
     public boolean checkIntoTriangle() {
         if ((x <= r/2 && x >= 0) && (y >= 0 && y <= r)) {
-            if(y <= (x * (-2) + 1))
+            if(y <= (x * (-2) + r))
                 return true;
         }
         return false;
     }
 
     public boolean checkIntoRectangle() {
-        if ((x >= -r && x >= 0) && (y <= 0 && y >= -r / 2)) {
+        if ((x >= -r && x <= 0) && (y <= 0 && y >= -r / 2)) {
             return true;
         }
         return false;

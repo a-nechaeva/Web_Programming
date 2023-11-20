@@ -12,7 +12,14 @@ window.onload = function () {
 
 }
 
-
+function gotData() {
+    if (request.readyState == 4) {
+        let status = request.status;
+        if (status == 200) {
+            document.getElementById("resultBox").innerHTML = request.responseText
+        }
+    }
+}
 function drawWithPoint() {
     drawingCanvas =
         document.getElementById('graph');
