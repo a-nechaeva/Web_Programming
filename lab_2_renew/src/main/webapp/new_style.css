@@ -18,9 +18,12 @@ body {
 /* здесь же задан общий вид шапки, см тз */
 .header_span_p {
 
-    background-image: linear-gradient(to right,#70ccc9, #f7846f);
+   /* background-image: linear-gradient(to right,#70ccc9, #f7846f);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+
+    */
+    color: azure;
     font-size: 30px;
     font-family: Cursive;
     text-align: center;
@@ -28,11 +31,11 @@ body {
 
 header span {
    /* background-image: linear-gradient(to right,#69b7eb, #b3dbd3, #f4d6db);
-
-    */
-    background-image: linear-gradient(to right,#70ccc9, #f7846f);
+ background-image: linear-gradient(to right,#70ccc9, #f7846f);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    */
+   color: azure;
     font-size: 50px;
     font-family: Cursive;
     text-align: center;
@@ -40,23 +43,23 @@ header span {
 }
 
 .borderName{
-    background: rgba(65,65,65, 0.3);
+    background: rgba(66,67,121, 0.5);
 }
 svg {
     background: rgba(255,255,255, 0.3);
 }
 .specialArea{
-    background: linear-gradient(to bottom, rgba(65,65,65, 0.9), rgba(65,65,65, 0));
+    background: linear-gradient(to bottom, rgba(66,67,121), rgba(65,65,65, 0));
 }
 .borderName:hover{
-    background: #202224;
+    background: rgba(66,67,121);
     border-image-slice: 1;
     border-width: 2px;
     border-style: solid;
     border-image-source: linear-gradient(to left,  #69b7eb, #b3dbd3, #f4d6db);
 }
 .submit{
-    background: rgba(65,65,65, 0.3);
+    background: rgba(66,67,121, 0.5);
 }
 
 #xTitle{
@@ -129,7 +132,7 @@ input::placeholder{
 }
 #yTextField {
     text-align: center;
-    background-color: #202224;
+    background-color: rgba(66,67,121);
     color: #b3dbd3;
     font-size: 15px;
     border-image-slice: 1;
@@ -138,7 +141,7 @@ input::placeholder{
     border-image-source: linear-gradient(to left, #69b7eb, #b3dbd3, #f4d6db);
 }
 #yTextField:hover {
-    color: #202224;
+    color: rgba(66,67,121);
     background-image: linear-gradient(to left, #69b7eb, #b3dbd3, #f4d6db);
 }
 .rRadio:hover{
