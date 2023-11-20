@@ -1,5 +1,3 @@
-package com.anna.lab_2_renew;
-
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
@@ -52,7 +50,7 @@ public class ControllerServlet extends HttpServlet {
             servletContext.setAttribute("answer", new LinkedList<String>());
             servletContext.setAttribute("number", 0);
         } else if (t == 2) {
-            LinkedList<String> answer = new LinkedList<>();
+            LinkedList<String> answer =new LinkedList<>();
             String s = "<td>Данных пока нет</td>";
             answer.add("<tr>" + s + s + s + s + s + s+"</tr>");
             servletContext.setAttribute("answer",

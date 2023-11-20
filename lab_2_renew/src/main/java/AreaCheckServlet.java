@@ -1,5 +1,3 @@
-package com.anna.lab_2_renew;
-
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
