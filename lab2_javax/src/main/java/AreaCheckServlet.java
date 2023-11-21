@@ -18,7 +18,7 @@ public class AreaCheckServlet extends HttpServlet {
     HttpServletResponse response;
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         this.request = request;
         this.response = response;
         servletContext = request.getServletContext();

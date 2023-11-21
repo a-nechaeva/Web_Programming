@@ -4,10 +4,6 @@
 <%
   ServletContext context = request.getServletContext();
   JspWriter pw = out;
-
-  if ((Integer) context.getAttribute("t") != 2) {
-    request.getRequestDispatcher("clear_btn.jsp").include(request,response);
-  }
 %>
 <style>
   #scrollTable{
@@ -47,6 +43,10 @@
       pw.println(s);
     }
   %>
-
+  <%
+      if ((Integer) context.getAttribute("t") != 2) {
+          request.getRequestDispatcher("clear_btn.jsp").include(request,response);
+      }
+  %>
   </tbody>
 </table>

@@ -37,7 +37,7 @@ document.addEventListener('click', function (e) {
 
 function sendRequestGetData() {
     let response = "t=" + 3;
-    request.open("GET", "ControllerServlet?" + response);
+    request.open("POST", "ControllerServlet?" + response);
     request.onreadystatechange = gotData;
     request.send();
 }
@@ -45,7 +45,7 @@ function sendRequestGetData() {
 function sendRequestHandle() {
     if (validate()) {
         let response = "t=" + 1 + "&x=" + x + "&y=" + y + "&r=" + r;
-        request.open("GET", "ControllerServlet?" + response);
+        request.open("POST", "ControllerServlet?" + response);
         request.onreadystatechange = gotData;
         request.send();
         return true
@@ -55,7 +55,7 @@ function sendRequestHandle() {
 
 function sendRequestClear() {
     let response = "t=" + 2;
-    request.open("GET", "ControllerServlet?" + response);
+    request.open("POST", "ControllerServlet?" + response);
     request.onreadystatechange = gotData;
     request.send();
 }
@@ -122,7 +122,6 @@ function validate() {
     } else {
         return false
     }
-
 }
 
 document.querySelector('svg').addEventListener("mousedown", function (e) {
@@ -236,7 +235,6 @@ function checkR(r) {
     }
 }
 
-
 function checkX(x) {
     let exceptionFieldX = document.getElementById('exceptionFieldX')
     if (!isNumber(x)) {
@@ -252,18 +250,3 @@ function checkX(x) {
 function isNumber(n) {
     return !isNaN(parseFloat(n)) && !isNaN(n - 0)
 }
-
-/*
-function clock() {
-    let date = new Date(),
-        hours = (date.getHours() < 10) ? '0' + date.getHours() : date.getHours(),
-        minutes = (date.getMinutes() < 10) ? '0' + date.getMinutes() : date.getMinutes(),
-        seconds = (date.getSeconds() < 10) ? '0' + date.getSeconds() : date.getSeconds()
-
-    document.getElementById('clock').innerText = hours + ':' + minutes + ':' + seconds
-}
-
-setInterval(clock, 1000)
-clock()
-
- */
