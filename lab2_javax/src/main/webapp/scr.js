@@ -60,7 +60,6 @@ function sendRequestClear() {
     request.send();
 }
 
-// вместо кнопки "проверить точку" можно нажать enter
 document.querySelectorAll('.input').forEach(function (item) {
     item.addEventListener("keydown", function (event) {
         if (event.keyCode == 13) {
@@ -79,7 +78,6 @@ function getFormData() {
     let form = document.getElementById('form')
     y = form.y.value.replace(",", ".")
     r = form.r.value.replace(",", ".")
-    //r = form.r.value
     x = form.x.value
 }
 
@@ -194,7 +192,6 @@ function changeYCord(){
 function checkChoseR() {
     let form = document.getElementById('form')
     r = form.r.value.replace(",", ".")
-    //r = form.r.value
     return checkR(r);
 }
 
@@ -219,18 +216,8 @@ function checkY(y) {
 }
 
 function checkR(r) {
-  /*  let exceptionFieldR = document.getElementById('exceptionFieldR')
-    if (!isNumber(r)) {
-        exceptionFieldR.innerText = "Выберите значение R"
-        return false
-    } else {
-        exceptionFieldR.innerText = ""
-        return true
-
-    }
-
-   */
     let exceptionFieldR = document.getElementById('exceptionFieldR')
+
     if (r.length == 0) {
         exceptionFieldR.innerText = "Поле R не может быть пустым"
         return false
@@ -246,8 +233,6 @@ function checkR(r) {
         return true
 
     }
-
-
 }
 
 function checkX(x) {
