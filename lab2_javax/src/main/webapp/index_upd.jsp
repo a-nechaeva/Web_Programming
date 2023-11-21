@@ -9,20 +9,37 @@
     request.getRequestDispatcher("clear_btn.jsp").include(request,response);
   }
 %>
-
+<style>
+  #scrollTable{
+    height: 200px;
+    width: 600px;
+    display: block;
+    overflow-y: auto;
+    background-image: linear-gradient(to right,#69b7eb, #b3dbd3, #f4d6db);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 20px;
+    font-family: Cursive;
+    text-align: center;
+  }
+  td {
+    padding-left: 20px;
+  }
+</style>
 
 <table id="table-result">
-  <thead>
+ <!-- <thead> -->
   <tr>
-    <th>№</th>
-    <th>Точка в зоне</th>
-    <th>R</th>
-    <th>X</th>
-    <th>Y</th>
-    <th>Время обработки</th>
+    <td>№</td>
+    <td>Точка в зоне</td>
+    <td>R</td>
+    <td>X</td>
+    <td>Y</td>
+    <td>Время обработки</td>
   </tr>
-  </thead>
-  <tbody>
+ <!-- </thead> -->
+ <!-- <tbody style="height: 200px;display: block; overflow-y: auto"> -->
+  <tbody id="scrollTable">
 
   <%
     LinkedList<String> answer = (LinkedList<String>) context.getAttribute("answer");

@@ -207,6 +207,18 @@ button:checked {
 #mainPad{
     padding-top: 100px;
 }
+
+#scrollTable{
+    height: 200px;
+    display: block;
+    overflow-y: auto;
+    background-image: linear-gradient(to right,#69b7eb, #b3dbd3, #f4d6db);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 20px;
+    font-family: Cursive;
+    text-align: center;
+}
 /*
 #error{
     padding-left: 200px;
