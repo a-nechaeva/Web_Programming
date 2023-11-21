@@ -89,7 +89,7 @@ function validateCoordinates() {
         return true
     }
     if (!checkYInArea()) {
-        msg+="Y должен быть (-3;3)\n"
+        msg+="Y должен быть (-5;3)\n"
     }
     if(!checkXInArea()){
         msg+="X должен быть [-3;5]"
@@ -99,7 +99,7 @@ function validateCoordinates() {
 }
 
 function checkYInArea(){
-    if (y>-3 && y<3){
+    if (y>-5 && y<3){
         return true
     }
     return false
@@ -126,10 +126,6 @@ function validate() {
 }
 
 document.querySelector('svg').addEventListener("mousedown", function (e) {
-    /*let svg = document.querySelector('svg')
-    let bcr = svg.getBoundingClientRect()*/
-    /*cordX = e.clientX - bcr.left
-    cordY = e.clientY - bcr.top*/
     cordX=e.offsetX
     cordY = e.offsetY
     detectClick()
@@ -149,15 +145,15 @@ function detectClick() {
 
 function setVisiblePoint(){
     let point = document.getElementById("point")
-    point.setAttribute('cx',150+cordX)
-    point.setAttribute('cy',150-cordY)
+    point.setAttribute('cx',300+cordX)
+    point.setAttribute('cy',300-cordY)
     point.setAttribute("visibility","visible")
 }
 
 function unsetVisiblePoint(){
     let point = document.getElementById("point")
-    point.setAttribute('cx',150)
-    point.setAttribute('cy',150)
+    point.setAttribute('cx',300)
+    point.setAttribute('cy',300)
     point.setAttribute("visibility","hidden")
 }
 
@@ -169,15 +165,15 @@ function convertCoordinates() {
 }
 
 function convertCoordinate(coord){
-    return (coord/120)*r;
+    return (coord/240)*r;
 }
 
 function convertToCoordinate(value){
-    return (value*120)/r;
+    return (value*240)/r;
 }
 
 function changeXCord(){
-    let centerX = 150
+    let centerX = 300
     if (cordX < centerX){
         cordX = -(centerX-cordX)
     }else{
@@ -186,7 +182,7 @@ function changeXCord(){
 }
 
 function changeYCord(){
-    let centerY = 150
+    let centerY = 300
     if (cordY>centerY){
         cordY = -(cordY-centerY)
     }else {
@@ -210,7 +206,7 @@ function checkY(y) {
     } else if (!isNumber(y)) {
         exceptionFieldY.innerText = "Поле Y должно быть числом"
         return false
-    } else if (!(y < 3 && y > -3)) {
+    } else if (!(y < 3 && y > -5)) {
         exceptionFieldY.innerText = "Поле Y должно быть (-3;3)"
         return false
     } else {
@@ -257,6 +253,7 @@ function isNumber(n) {
     return !isNaN(parseFloat(n)) && !isNaN(n - 0)
 }
 
+/*
 function clock() {
     let date = new Date(),
         hours = (date.getHours() < 10) ? '0' + date.getHours() : date.getHours(),
@@ -268,3 +265,5 @@ function clock() {
 
 setInterval(clock, 1000)
 clock()
+
+ */

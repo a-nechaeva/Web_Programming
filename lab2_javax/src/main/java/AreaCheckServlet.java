@@ -67,33 +67,15 @@ public class AreaCheckServlet extends HttpServlet {
     }
 
     public boolean checkIntoTriangle() {
-        if ((x <= r && x >= 0) && (y <= 0 && y >= -r)) {
-            float a, b, c, d;
-            a = -(-r - 0);
-            b = (0 - (r));
-            c = -(a * r + b * 0);
-            d = a * x + b * y + c;
-            if (d <= 0) {
-                return true;
-            }
-        }
-        return false;
+        return (x >= 0) && (x <= r / 2) && (y >= 0) && (y <= r) && (y <= -2 * x + r);
     }
 
     public boolean checkIntoRectangle() {
-        if ((x <= r && x >= 0) && (y <= r / 2 && y >= 0)) {
-            return true;
-        }
-        return false;
+        return (x >= -r) && (x <= 0) && (y >= -r / 2) && (y <= 0);
     }
 
     public boolean checkIntoCircle() {
-        if (((x <= 0 && x >= -r) && (y <= r && y >= 0))) {
-            if (((x * x + y * y) <= r * r)) {
-                return true;
-            }
-        }
-        return false;
+        return (x >= 0) && (x <= r / 2) && (y <= 0) && (y >= -r / 2) && (x * x + y * y <= r * r / 4);
     }
 
     public boolean validate(String x, String y, String r) {
@@ -112,7 +94,7 @@ public class AreaCheckServlet extends HttpServlet {
     }
 
     public boolean validateRange() {
-        if ((x >= -3 && x <= 5) && (y > -3.0 && y < 3.0) && (r > 2.0 && r < 5.0)) {
+        if ((x >= -5 && x <= 3) && (y > -5.0 && y < 3.0) && (r > 2.0 && r < 5.0)) {
             return true;
         }
         return false;
