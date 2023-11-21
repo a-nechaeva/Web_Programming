@@ -78,8 +78,15 @@ document.querySelectorAll('.input').forEach(function (item) {
 function getFormData() {
     let form = document.getElementById('form')
     y = form.y.value.replace(",", ".")
-    r = form.r.value.replace(",", ".")
+    //r = form.r.value.replace(",", ".")
     //r = form.r.value
+    let rs = document.documentElement.getElementsByClassName("rRadio");
+    for (let rr of rs) {
+        if (rr.checked) {
+            r = rr.value.replace(",", ".");
+            break;
+        }
+    }
     x = form.x.value
 }
 
@@ -193,9 +200,26 @@ function changeYCord(){
 
 function checkChoseR() {
     let form = document.getElementById('form')
-    r = form.r.value.replace(",", ".")
+    //r = form.r.value.replace(",", ".")
+    let rs = document.documentElement.getElementsByClassName("rRadio");
     //r = form.r.value
-    return checkR(r);
+    //return checkR(r);
+    let chosen = false;
+
+    for (let rr of rs) {
+        if (rr.checked) {
+            chosen = true;
+            break;
+        }
+    }
+
+    if (!chosen) {
+        let error = document.getElementById("error");
+        error.innerText = error.innerText + "¡Пожалуйста, выберите значение R! \n";
+        return false;
+    }
+    return true;
+
 }
 
 function checkY(y) {
@@ -230,16 +254,28 @@ function checkR(r) {
     }
 
    */
-    let exceptionFieldR = document.getElementById('exceptionFieldR')
-    if (r.length == 0) {
-        exceptionFieldR.innerText = "Поле R не может быть пустым"
-        return false
+    let rs = document.documentElement.getElementsByClassName("rRadio");
+    //r = form.r.value
+    //return checkR(r);
+    let chosen = false;
 
-    } else if (!isNumber(r)) {
-        exceptionFieldR.innerText = "Поле R должно быть числом"
-        return false
-    } else if (!(r < 5 && r > 2)) {
-        exceptionFieldR.innerText = "Поле R должно быть (2;5)"
+    for (let rr of rs) {
+        if (rr.checked) {
+            chosen = true;
+            break;
+        }
+    }
+
+    if (!chosen) {
+        let error = document.getElementById("exceptionFieldR");
+        error.innerText = error.innerText + "¡Пожалуйста, выберите значение R! \n";
+        return false;
+    }
+    return true;
+    /*
+    let exceptionFieldR = document.getElementById('exceptionFieldR')
+    if (!isNumber(r)) {
+        exceptionFieldR.innerText = "Выберите значение R"
         return false
     } else {
         exceptionFieldR.innerText = ""
@@ -247,7 +283,7 @@ function checkR(r) {
 
     }
 
-
+     */
 }
 
 function checkX(x) {

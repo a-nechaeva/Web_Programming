@@ -92,7 +92,7 @@ public class AreaCheckServlet extends HttpServlet {
     }
 
     public boolean validateRange() {
-        if ((x >= -5 && x <= 3) && (y > -5.0 && y < 3.0) && (r > 2.0 && r < 5.0)) {
+        if ((x >= -5 && x <= 3) && (y > -5.0 && y < 3.0) && (r >= 1.0 && r <= 3.0)) {
             return true;
         }
         return false;
