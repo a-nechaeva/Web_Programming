@@ -67,27 +67,15 @@ public class AreaCheckServlet extends HttpServlet {
     }
 
     public boolean checkIntoTriangle() {
-        if ((x <= r/2 && x >= 0) && (y >= 0 && y <= r)) {
-            if(y <= (x * (-2) + r))
-                return true;
-        }
-        return false;
+        return (x >= 0) && (x <= r / 2) && (y >= 0) && (y <= r) && (y <= -2 * x + r);
     }
 
     public boolean checkIntoRectangle() {
-        if ((x >= -r && x <= 0) && (y <= 0 && y >= -r / 2)) {
-            return true;
-        }
-        return false;
+        return (x >= -r) && (x <= 0) && (y >= -r / 2) && (y <= 0);
     }
 
     public boolean checkIntoCircle() {
-        if (((x <= r / 2 && x >= 0) && (y <= 0 && y >= -r / 2))) {
-            if (((x * x + y * y) <= r * r)) {
-                return true;
-            }
-        }
-        return false;
+        return (x >= 0) && (x <= r / 2) && (y <= 0) && (y >= -r / 2) && (x * x + y * y <= r * r / 4);
     }
 
     public boolean validate(String x, String y, String r) {
@@ -106,10 +94,7 @@ public class AreaCheckServlet extends HttpServlet {
     }
 
     public boolean validateRange() {
-        if ((x >= -5 && x <= 3) && (y > -3.0 && y < 3.0) && (r >= 1.0 && r <= 3.0)) {
-            return true;
-        }
-        return false;
+        return (x >= -5 && x <= 3) && (y > -5.0 && y < 3.0) && (r >= 1.0 && r <= 3.0);
     }
 
     public static boolean isNumeric(String str) {
