@@ -78,10 +78,12 @@ document.querySelectorAll('.input').forEach(function (item) {
 function getFormData() {
     let form = document.getElementById('form')
     y = form.y.value.replace(",", ".")
+    //r = form.r.value.replace(",", ".")
+    //r = form.r.value
     let rs = document.documentElement.getElementsByClassName("rRadio");
     for (let rr of rs) {
         if (rr.checked) {
-            r = rr.value;
+            r = rr.value.replace(",", ".");
             break;
         }
     }
@@ -91,7 +93,6 @@ function getFormData() {
 window.onload = sendRequestGetData();
 
 function validateCoordinates() {
-    /*
     let msg = ""
     if (checkYInArea()&&checkXInArea()){
         return true
@@ -100,12 +101,10 @@ function validateCoordinates() {
         msg+="Y должен быть (-5;3)\n"
     }
     if(!checkXInArea()){
-        msg+="X должен быть [-3;5]"
+        msg+="X должен быть {-5;3}"
     }
     alert(msg)
-
-     */
-    return true
+    return false
 }
 
 function checkYInArea(){
@@ -116,7 +115,7 @@ function checkYInArea(){
 }
 
 function checkXInArea(){
-    if (x>=-3 && x<=5){
+    if (x>=-5 && x<=3){
         return true
     }
     return false
@@ -200,23 +199,29 @@ function changeYCord(){
 }
 
 function checkChoseR() {
+    let form = document.getElementById('form')
+    //r = form.r.value.replace(",", ".")
     let rs = document.documentElement.getElementsByClassName("rRadio");
+    //r = form.r.value
+    //return checkR(r);
     let chosen = false;
-    let error = document.getElementById("exceptionFieldR");
+
     for (let rr of rs) {
         if (rr.checked) {
+            r = rr.value;
             chosen = true;
-            error.innerText = "";
             break;
         }
     }
-
-    if (!chosen) {
-
+    return checkR(r);
+    /*if (!chosen) {
+        let error = document.getElementById("error");
         error.innerText = error.innerText + "¡Пожалуйста, выберите значение R! \n";
         return false;
     }
     return true;
+
+     */
 
 }
 
@@ -231,7 +236,7 @@ function checkY(y) {
         exceptionFieldY.innerText = "Поле Y должно быть числом"
         return false
     } else if (!(y < 3 && y > -5)) {
-        exceptionFieldY.innerText = "Поле Y должно быть (-5;3)"
+        exceptionFieldY.innerText = "Поле Y должно быть (-3;3)"
         return false
     } else {
         exceptionFieldY.innerText = ""
@@ -241,23 +246,48 @@ function checkY(y) {
 }
 
 function checkR(r) {
+     let exceptionFieldR = document.getElementById('exceptionFieldR')
+      if (!isNumber(r)) {
+          exceptionFieldR.innerText = "Выберите значение R"
+          return false
+      } else {
+          exceptionFieldR.innerText = ""
+          return true
+
+      }
+
+
+    /*
     let rs = document.documentElement.getElementsByClassName("rRadio");
+    //r = form.r.value
+    //return checkR(r);
     let chosen = false;
-    let error = document.getElementById("exceptionFieldR");
+
     for (let rr of rs) {
         if (rr.checked) {
             chosen = true;
-            error.innerText = "";
             break;
         }
     }
 
     if (!chosen) {
-
+        let error = document.getElementById("exceptionFieldR");
         error.innerText = error.innerText + "¡Пожалуйста, выберите значение R! \n";
         return false;
     }
     return true;
+    /*
+    let exceptionFieldR = document.getElementById('exceptionFieldR')
+    if (!isNumber(r)) {
+        exceptionFieldR.innerText = "Выберите значение R"
+        return false
+    } else {
+        exceptionFieldR.innerText = ""
+        return true
+
+    }
+
+     */
 }
 
 function checkX(x) {
