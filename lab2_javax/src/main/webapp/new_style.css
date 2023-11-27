@@ -248,6 +248,10 @@ button:checked {
     border-style: solid;
     border-image-source: linear-gradient(to left,  #69b7eb, #b3dbd3, #f4d6db);
 }
+.exception{
+    color: magenta;
+    font-size: 25px;
+}
 /*
 #error{
     padding-left: 200px;
