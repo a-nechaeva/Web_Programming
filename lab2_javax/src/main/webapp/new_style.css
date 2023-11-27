@@ -235,6 +235,19 @@ button:checked {
     font-family: Cursive;
     text-align: center;
 }
+.for_table_res{
+    /*background: rgba(66,67,121, 0.5);
+
+     */
+    background: black;
+}
+.for_table_res:hover{
+    background: rgba(66,67,121);
+    border-image-slice: 1;
+    border-width: 2px;
+    border-style: solid;
+    border-image-source: linear-gradient(to left,  #69b7eb, #b3dbd3, #f4d6db);
+}
 /*
 #error{
     padding-left: 200px;
