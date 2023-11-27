@@ -61,6 +61,7 @@ function sendRequestClear() {
 }
 
 // вместо кнопки "проверить точку" можно нажать enter
+/*
 document.querySelectorAll('.input').forEach(function (item) {
     item.addEventListener("keydown", function (event) {
         if (event.keyCode == 13) {
@@ -74,6 +75,8 @@ document.querySelectorAll('.input').forEach(function (item) {
 
     })
 });
+
+ */
 
 function getFormData() {
     let form = document.getElementById('form')
@@ -228,7 +231,7 @@ function checkChoseR() {
 function checkY(y) {
     let exceptionFieldY = document.getElementById('exceptionFieldY')
 
-    if (y.length == 0) {
+    if (y.length === 0) {
         exceptionFieldY.innerText = "Поле Y не может быть пустым"
         return false
 

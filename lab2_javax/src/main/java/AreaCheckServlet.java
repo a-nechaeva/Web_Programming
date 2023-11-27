@@ -35,9 +35,9 @@ public class AreaCheckServlet extends HttpServlet {
 
 
     public void handleNumbers() {
-        startTime = System.nanoTime();
+        startTime = System.nanoTime() / 1000;
         String isInArea = (checkGetInto()) ? "Да" : "Нет";
-        float time = (float) (System.nanoTime() - startTime);
+        float time = (float) (System.nanoTime() / 1000 - startTime);
         updateNumber();
         answer = (LinkedList<String>) servletContext
                 .getAttribute("answer");
@@ -46,7 +46,7 @@ public class AreaCheckServlet extends HttpServlet {
                 "<td>" + r + "</td>" +
                 "<td>" + x + "</td>" +
                 "<td>" + y + "</td>" +
-                "<td>" + time + " нс</td></tr>");
+                "<td>" + time + "</td></tr>");
         servletContext.setAttribute("answer", answer);
     }
 

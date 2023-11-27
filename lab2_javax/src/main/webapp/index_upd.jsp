@@ -11,30 +11,32 @@
     width: 600px;
     display: block;
     overflow-y: auto;
-    background-image: linear-gradient(to right,#69b7eb, #b3dbd3, #f4d6db);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 20px;
-    font-family: Cursive;
-    text-align: center;
   }
   td {
     padding-left: 20px;
   }
+  #table-result{
+      background-image: linear-gradient(to right,#69b7eb, #b3dbd3, #f4d6db);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 20px;
+      font-family: Cursive;
+      text-align: center;
+  }
 </style>
 
 <table id="table-result">
- <!-- <thead> -->
+  <thead >
   <tr>
     <td>№</td>
-    <td>Точка в зоне</td>
+    <td>Попала?</td>
     <td>R</td>
     <td>X</td>
     <td>Y</td>
-    <td>Время обработки</td>
+    <td>Время работы, мкс</td>
   </tr>
- <!-- </thead> -->
- <!-- <tbody style="height: 200px;display: block; overflow-y: auto"> -->
+  </thead>
+
   <tbody id="scrollTable">
 
   <%
@@ -43,10 +45,10 @@
       pw.println(s);
     }
   %>
-  <%
-      if ((Integer) context.getAttribute("t") != 2) {
-          request.getRequestDispatcher("clear_btn.jsp").include(request,response);
-      }
-  %>
   </tbody>
 </table>
+<%
+  if ((Integer) context.getAttribute("t") != 2) {
+    request.getRequestDispatcher("clear_btn.jsp").include(request,response);
+  }
+%>

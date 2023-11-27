@@ -199,9 +199,20 @@
                                         </td>
                                     </tr>
                                     <tr class="paddingEl">
-                                        <td class="submit paddingEl" >
+                                        <td class="paddingEl" > <!-- submit -->
                                             <!--<input id="submitButton" type="submit" value="Проверить точку"  />-->
-                                            <button type="button" id="subBtn">Проверить точку</button>
+                                            <table class="borderName">
+                                                <tr>
+                                                    <td class="paddingEl">
+                                                        <!-- костыль со стилем хорошо бы убрать, не понимаю, почему из css не работает-->
+                                                        <button id="subBtn" type="button" style=" background-image: linear-gradient(to right, #69b7eb, #b3dbd3, #f4d6db);
+                                                         -webkit-background-clip: text;
+                                                         -webkit-text-fill-color: transparent;
+                                                         font-size: 25px;">Проверить точку</button>
+                                                    </td>
+                                                </tr>
+                                            </table>
+
                                         </td>
                                         <!-- <td class="submit paddingEl">
                                              <input id="clear" id="submitButton" type="submit" value="Очистить таблицу" />

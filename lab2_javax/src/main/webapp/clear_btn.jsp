@@ -6,8 +6,10 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<tr>
-    <td>
-        <button type='button' id='clrBtn'>Очистить результаты</button>
-    </td>
-</tr>
+<table>
+    <tr>
+        <td>
+            <button type='button' id='clrBtn'>Очистить результаты</button>
+        </td>
+    </tr>
+</table>

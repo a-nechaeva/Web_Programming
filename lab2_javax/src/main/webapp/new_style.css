@@ -77,7 +77,7 @@ svg {
 }
 
 
-#submitButton{
+#subBtn{
     background-image: linear-gradient(to right, #69b7eb, #b3dbd3, #f4d6db);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -90,7 +90,21 @@ svg {
     font-size: 25px;
 }
 /* :hover -- ример селектора псевдокласса */
-.submitButton:hover{
+#subBtn:hover{
+    background-image: linear-gradient(to left, #69b7eb, #b3dbd3, #f4d6db);
+    border-image-slice: 1;
+    border-width: 2px;
+    border-style: solid;
+    border-image-source: linear-gradient(to left,  #69b7eb, #b3dbd3, #f4d6db);
+    cursor: pointer;
+}
+button {
+    background-image: linear-gradient(to right, #69b7eb, #b3dbd3, #f4d6db);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 25px;
+}
+button:hover {
     background-image: linear-gradient(to left, #69b7eb, #b3dbd3, #f4d6db);
     border-image-slice: 1;
     border-width: 2px;
@@ -197,13 +211,15 @@ span{
 #prevAnswersText{
     padding-left: 200px;
 }
-
+/*
 button {
     background-color: #202224;
 }
 button:checked {
     background-color: darkgray;
 }
+
+ */
 #mainPad{
     padding-top: 100px;
 }
