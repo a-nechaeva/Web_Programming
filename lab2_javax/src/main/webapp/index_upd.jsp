@@ -25,15 +25,34 @@
   }
 </style>
 
-<table id="table-result">
-  <thead >
+<table id="table-result" style="background-color: rgb(66,67,121)">
+  <thead>
   <tr>
-    <td>№</td>
-    <td>Попала?</td>
-    <td>R</td>
-    <td>X</td>
-    <td>Y</td>
-    <td>Время работы, мкс</td>
+    <th>
+      <span>
+        №
+      </span>
+      <span>
+        Попала?
+      </span>
+      <span>
+        R
+      </span>
+      <span>
+        X
+      </span>
+      <span>
+        Y
+      </span>
+      <span>
+        Время работы, мкс
+      </span>
+    </th>
+    <!--<th>Попала?</th>
+    <th>R</th>
+    <th>X</th>
+    <th>Y</th>
+    <th>Время работы, мкс</th>-->
   </tr>
   </thead>
 
