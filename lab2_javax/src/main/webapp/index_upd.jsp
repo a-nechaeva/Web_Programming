@@ -14,6 +14,7 @@
   }
   td {
     padding-left: 20px;
+    padding-right: 20px;
   }
   #table-result{
       background-image: linear-gradient(to right,#69b7eb, #b3dbd3, #f4d6db);
@@ -21,7 +22,7 @@
       -webkit-text-fill-color: transparent;
       font-size: 20px;
       font-family: Cursive;
-      text-align: center;
+      text-align: left;
   }
 </style>
 
@@ -29,23 +30,23 @@
   <thead>
   <tr>
     <th>
-      <span>
+      <span style="padding-left: 20px">
         №
       </span>
       <span>
         Попала?
       </span>
-      <span>
+      <span style="padding-left: 15px">
         R
       </span>
-      <span>
+      <span style="padding-left: 55px">
         X
       </span>
-      <span>
+      <span style="padding-left: 80px">
         Y
       </span>
-      <span>
-        Время работы, мкс
+      <span style="padding-left: 55px">
+        Время,мкс
       </span>
     </th>
     <!--<th>Попала?</th>

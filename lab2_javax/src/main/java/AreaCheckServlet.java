@@ -35,18 +35,18 @@ public class AreaCheckServlet extends HttpServlet {
 
 
     public void handleNumbers() {
-        startTime = System.nanoTime() / 1000;
+        startTime = System.nanoTime();
         String isInArea = (checkGetInto()) ? "Да" : "Нет";
-        float time = (float) (System.nanoTime() / 1000 - startTime);
+        float time = (float) (System.nanoTime()  - startTime);
         updateNumber();
         answer = (LinkedList<String>) servletContext
                 .getAttribute("answer");
         answer.addFirst("<tr><td>" + number + "</td>" +
                 "<td>" + isInArea + "</td>" +
                 "<td>" + r + "</td>" +
-                "<td>" + x + "</td>" +
-                "<td>" + y + "</td>" +
-                "<td>" + time + "</td></tr>");
+                "<td>" + String.format("%.3f", x) + "</td>" +
+                "<td>" + String.format("%.3f", y) + "</td>" +
+                "<td>" + time / 1000 + "</td></tr>");
         servletContext.setAttribute("answer", answer);
     }
 
