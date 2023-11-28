@@ -4,6 +4,8 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.LinkedList;
 
+
+// добавить фильтр, чтобы нельзя было вызвать напрямую из браузера
 @WebServlet(name = "AreaCheckServlet", value = "/AreaCheckServlet")
 public class AreaCheckServlet extends HttpServlet {
     Float x;
@@ -23,13 +25,19 @@ public class AreaCheckServlet extends HttpServlet {
         String x = request.getParameter("x");
         String y = request.getParameter("y");
         String r = request.getParameter("r");
-        if (validate(x, y, r)) {
+        this.x = Float.parseFloat(x);
+        this.y = Float.parseFloat(y);
+        this.r = Float.parseFloat(r);
+        handleNumbers();
+        /*if (validate(x, y, r)) {
             handleNumbers();
         } else {
             String s = "<td>Ошибка валидности</td>";
             answer.addFirst("<tr>"+ s + s + s + s + s + s +"</tr>");
             servletContext.setAttribute("answer", answer);
         }
+
+         */
         response.sendRedirect("index_upd.jsp");
     }
 
@@ -41,6 +49,7 @@ public class AreaCheckServlet extends HttpServlet {
         updateNumber();
         answer = (LinkedList<String>) servletContext
                 .getAttribute("answer");
+        // здесь json / xml
         answer.addFirst("<tr><td>" + number + "</td>" +
                 "<td>" + isInArea + "</td>" +
                 "<td>" + r + "</td>" +
@@ -76,6 +85,10 @@ public class AreaCheckServlet extends HttpServlet {
         return (x >= 0) && (x <= r / 2) && (y <= 0) && (y >= -r / 2) && (x * x + y * y <= r * r / 4);
     }
 
+
+
+   // это все в validate
+    /*
     public boolean validate(String x, String y, String r) {
         boolean isNumbers = false;
         if (x != null && y != null && r != null) {
@@ -99,5 +112,7 @@ public class AreaCheckServlet extends HttpServlet {
         str.replaceFirst(",", ".");
         return str.matches("-?\\d+(\\.\\d+)?");
     }
+
+     */
 
 }

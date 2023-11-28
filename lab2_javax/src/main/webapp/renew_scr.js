@@ -81,8 +81,6 @@ document.querySelectorAll('.input').forEach(function (item) {
 function getFormData() {
     let form = document.getElementById('form')
     y = form.y.value.replace(",", ".")
-    //r = form.r.value.replace(",", ".")
-    //r = form.r.value
     let rs = document.documentElement.getElementsByClassName("rRadio");
     for (let rr of rs) {
         if (rr.checked) {
@@ -203,10 +201,7 @@ function changeYCord(){
 
 function checkChoseR() {
     let form = document.getElementById('form')
-    //r = form.r.value.replace(",", ".")
     let rs = document.documentElement.getElementsByClassName("rRadio");
-    //r = form.r.value
-    //return checkR(r);
     let chosen = false;
 
     for (let rr of rs) {
@@ -217,14 +212,6 @@ function checkChoseR() {
         }
     }
     return checkR(r);
-    /*if (!chosen) {
-        let error = document.getElementById("error");
-        error.innerText = error.innerText + "¡Пожалуйста, выберите значение R! \n";
-        return false;
-    }
-    return true;
-
-     */
 
 }
 
@@ -258,39 +245,6 @@ function checkR(r) {
           return true
 
       }
-
-
-    /*
-    let rs = document.documentElement.getElementsByClassName("rRadio");
-    //r = form.r.value
-    //return checkR(r);
-    let chosen = false;
-
-    for (let rr of rs) {
-        if (rr.checked) {
-            chosen = true;
-            break;
-        }
-    }
-
-    if (!chosen) {
-        let error = document.getElementById("exceptionFieldR");
-        error.innerText = error.innerText + "¡Пожалуйста, выберите значение R! \n";
-        return false;
-    }
-    return true;
-    /*
-    let exceptionFieldR = document.getElementById('exceptionFieldR')
-    if (!isNumber(r)) {
-        exceptionFieldR.innerText = "Выберите значение R"
-        return false
-    } else {
-        exceptionFieldR.innerText = ""
-        return true
-
-    }
-
-     */
 }
 
 function checkX(x) {
