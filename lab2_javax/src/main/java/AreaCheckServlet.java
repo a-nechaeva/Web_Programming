@@ -50,12 +50,21 @@ public class AreaCheckServlet extends HttpServlet {
         answer = (LinkedList<String>) servletContext
                 .getAttribute("answer");
         // здесь json / xml
-        answer.addFirst("<tr><td>" + number + "</td>" +
+        // здесь, наверное, должно быть чтение и и запись в файл ???
+       /* answer.addFirst("<tr><td>" + number + "</td>" +
                 "<td>" + isInArea + "</td>" +
                 "<td>" + r + "</td>" +
                 "<td>" + String.format("%.3f", x) + "</td>" +
                 "<td>" + String.format("%.3f", y) + "</td>" +
                 "<td>" + time / 1000 + "</td></tr>");
+        */
+        // да, пока костыль, соре
+        answer.addFirst(number + "%" +
+                       isInArea + "%" +
+                       r + "%" +
+                       String.format("%.3f", x) + "%" +
+                       String.format("%.3f", y) + "%" +
+                       time / 1000);
         servletContext.setAttribute("answer", answer);
     }
 

@@ -62,7 +62,13 @@
   <%
     LinkedList<String> answer = (LinkedList<String>) context.getAttribute("answer");
     for (String s : answer) {
-      pw.println(s);
+      String[] fragments = s.split("%");
+      pw.println("<tr>");
+      for (String fr: fragments) {
+        pw.println("<td>" + fr + "</td>");
+      }
+      pw.println("</tr>");
+      //pw.println(s);
     }
   %>
   </tbody>
