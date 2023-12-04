@@ -20,7 +20,6 @@ public class FilterForAreaCheck implements Filter {
             String r = req.getRequestURL().toString();
             if (!r.contains("AreaCheckServlet")) {
                 chain.doFilter(request, response);
-                return;
             }
         }
     }
