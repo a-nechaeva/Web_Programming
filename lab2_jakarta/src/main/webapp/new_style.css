@@ -1,0 +1,260 @@
+body {
+    /*background-color: #30363b ;
+    background: #272b2e;
+
+     */
+    background: #202224;
+    cursor: auto;
+    background-image: url("hayao.jpg");
+    background-position: left;
+    background-size: auto;
+    background-repeat: space;
+    /*height: 2160px;
+
+     */
+
+}
+/* header div и header div p -- селекторы потомств */
+/* здесь же задан общий вид шапки, см тз */
+.header_span_p {
+
+   /* background-image: linear-gradient(to right,#70ccc9, #f7846f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    */
+    color: azure;
+    font-size: 30px;
+    font-family: Cursive;
+    text-align: center;
+}
+
+header span {
+   /* background-image: linear-gradient(to right,#69b7eb, #b3dbd3, #f4d6db);
+ background-image: linear-gradient(to right,#70ccc9, #f7846f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    */
+   color: azure;
+    font-size: 50px;
+    font-family: Cursive;
+    text-align: center;
+
+}
+
+.borderName{
+    background: rgba(66,67,121, 0.5);
+}
+svg {
+    background: rgba(255,255,255, 0.3);
+}
+.specialArea{
+    background: linear-gradient(to bottom, rgba(66,67,121), rgba(65,65,65, 0));
+}
+.borderName:hover{
+    background: rgba(66,67,121);
+    border-image-slice: 1;
+    border-width: 2px;
+    border-style: solid;
+    border-image-source: linear-gradient(to left,  #69b7eb, #b3dbd3, #f4d6db);
+}
+.submit{
+    background: rgba(66,67,121, 0.5);
+}
+
+#xTitle{
+    color: #b3dbd3;
+    font-size: 25px;
+}
+#yTitle{
+    font-size: 25px;
+}
+#rTitle{
+    background-image: linear-gradient(to right, #69b7eb, #b3dbd3, #f4d6db);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 25px;
+}
+
+
+#subBtn{
+    background-image: linear-gradient(to right, #69b7eb, #b3dbd3, #f4d6db);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 25px;
+}
+#clear{
+    background-image: linear-gradient(to right, #69b7eb, #b3dbd3, #f4d6db);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 25px;
+}
+/* :hover -- ример селектора псевдокласса */
+#subBtn:hover{
+    background-image: linear-gradient(to left, #69b7eb, #b3dbd3, #f4d6db);
+    border-image-slice: 1;
+    border-width: 2px;
+    border-style: solid;
+    border-image-source: linear-gradient(to left,  #69b7eb, #b3dbd3, #f4d6db);
+    cursor: pointer;
+}
+button {
+    background-image: linear-gradient(to right, #69b7eb, #b3dbd3, #f4d6db);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 25px;
+}
+button:hover {
+    background-image: linear-gradient(to left, #69b7eb, #b3dbd3, #f4d6db);
+    border-image-slice: 1;
+    border-width: 2px;
+    border-style: solid;
+    border-image-source: linear-gradient(to left,  #69b7eb, #b3dbd3, #f4d6db);
+    cursor: pointer;
+}
+/* пример использования селектора псевдоэлемента */
+input::placeholder{
+    font-family: Cursive;
+    font-size: medium;
+}
+
+.paddingEl{
+    padding: 15px;
+}
+/*#paddingR{
+    padding-left: 150px;
+}
+
+ */
+.paddingTable{
+    padding-left: 80px;
+    padding-top: 50px;
+}
+#xSelectorStyle{
+    background-image: linear-gradient(to bottom, #69b7eb, #b3dbd3, #f4d6db);
+}
+.xClicked{
+    font-family: Cursive;
+}
+.xClicked:hover{
+    background-color: #202224;
+    color: #f4d6db;
+}
+.xClicked:checked{
+    background-color: #202224;
+    color: #b3dbd3;
+}
+#yTextField {
+    text-align: center;
+    background-color: rgba(66,67,121);
+    color: #b3dbd3;
+    font-size: 15px;
+    border-image-slice: 1;
+    border-width: 2px;
+    border-style: solid;
+    border-image-source: linear-gradient(to left, #69b7eb, #b3dbd3, #f4d6db);
+}
+#yTextField:hover {
+    color: rgba(66,67,121);
+    background-image: linear-gradient(to left, #69b7eb, #b3dbd3, #f4d6db);
+}
+.rRadio:hover{
+    cursor: pointer;
+}
+
+.clickedElement:hover{
+    border-image-slice: 1;
+    border-width: 2px;
+    border-style: solid;
+    border-image-source: linear-gradient(to left, #69b7eb, #b3dbd3, #f4d6db);
+}
+
+/* селектор дочерних классов */
+td > input{
+    font-family: Cursive;
+}
+#paddingPic{
+    padding-left: 200px;
+    color: #b3dbd3;
+    font-size: 25px;
+    font-family: Cursive;
+    text-align: center;
+}
+span{
+    background-image: linear-gradient(to right,#69b7eb, #b3dbd3, #f4d6db);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 20px;
+    font-family: Cursive;
+    text-align: center;
+}
+#reqTable{
+    background-image: linear-gradient(to right,#69b7eb, #b3dbd3, #f4d6db);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 20px;
+    font-family: Cursive;
+    text-align: center;
+}
+.resText{
+    text-align: center;
+    font-size: 30px;
+    padding-left: 30px;
+}
+.resPadding{
+    padding-left: 100px;
+    padding-top: 50px;
+}
+.inTableResPadding{
+    padding-left: 30px;
+}
+#prevAnswersText{
+    padding-left: 200px;
+}
+/*
+button {
+    background-color: #202224;
+}
+button:checked {
+    background-color: darkgray;
+}
+
+ */
+#mainPad{
+    padding-top: 100px;
+}
+
+#scrollTable{
+    height: 200px;
+    display: block;
+    overflow-y: auto;
+    background-image: linear-gradient(to right,#69b7eb, #b3dbd3, #f4d6db);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 20px;
+    font-family: Cursive;
+    text-align: center;
+}
+.for_table_res{
+    /*background: rgba(66,67,121, 0.5);
+
+     */
+    background: black;
+}
+.for_table_res:hover{
+    background: rgba(66,67,121);
+    border-image-slice: 1;
+    border-width: 2px;
+    border-style: solid;
+    border-image-source: linear-gradient(to left,  #69b7eb, #b3dbd3, #f4d6db);
+}
+.exception{
+    color: magenta;
+    font-size: 25px;
+}
+/*
+#error{
+    padding-left: 200px;
+}
+
+ */

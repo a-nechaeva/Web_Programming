@@ -1,0 +1,264 @@
+<!--<!DOCTYPE html> -->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>My II Web Lab ^. .% &#129293;</title>
+    <link rel="stylesheet" href="new_style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+<header class="specialArea">
+    <span>
+        Нечаева Анна Анатольевна, R3238
+    </span>
+    <br>
+    <span class="header_span_p">Вариант #918918</span>
+    <br>
+</header>
+<main>
+    <form id="form" method="post">
+        <table id="mainPad">
+            <tr>
+                <td>
+                    <table>
+                        <tr>
+                            <td>
+                                <!-- <img src="light_blue.png" id="paddingPic" alt="А график? ^. .^ &#128148;"> -->
+                                <!--<canvas id="graph" width="650" height="650">
+                                    <p>Ваш браузер не поддерживает рисование.</p>
+                                </canvas>-->
+                                <svg width="600" height="600" id="picture">
+                                    <!-- задаем прямоугольник-->
+                                    <rect x="60" y="300" width="240" height="120" fill-opacity="0.7" stroke="#424379"
+                                          fill="#424379"></rect>
+                                    <polygon points="300,300 300,60 420,300" fill-opacity="0.7" stroke="#424379"
+                                             fill="#424379"></polygon>
+                                    <path d="M300 300 L 420 300 C 420 300 420 420 300 420" fill-opacity="0.7" stroke="#424379"
+                                          fill="#424379"></path>
+                                    <!-- отрисовка осей -->
+                                    <line x1="0" y1="300" x2="600" y2="300" stroke="black"></line>
+                                    <line x1="300" y1="0" x2="300" y2="600" stroke="black"></line>
+                                    <!-- засечки на осях -->
+                                    <line x1="540" y1="296" x2="540" y2="304" stroke="black"></line>
+                                    <line x1="420" y1="296" x2="420" y2="304" stroke="black"></line>
+                                    <line x1="180" y1="296" x2="180" y2="304" stroke="black"></line>
+                                    <line x1="60" y1="296" x2="60" y2="304" stroke="black"></line>
+                                    <!-- подписи на оси х -->
+                                    <text x="580" y="290">X</text>
+                                    <text x="535" y="290">R</text>
+                                    <text x="410" y="290">R/2</text>
+                                    <text x="165" y="290">-R/2</text>
+                                    <text x="50" y="290">-R</text>
+                                    <!-- засечки на осях -->
+                                    <line x1="296" y1="540" x2="304" y2="540" stroke="black"></line>
+                                    <line x1="296" y1="420" x2="304" y2="420" stroke="black"></line>
+                                    <line x1="296" y1="180" x2="304" y2="180" stroke="black"></line>
+                                    <line x1="296" y1="60" x2="304" y2="60" stroke="black"></line>
+
+                                    <!-- подписи на оси y -->
+                                    <text x="310" y="15">Y</text>
+                                    <text x="310" y="60">R</text>
+                                    <text x="310" y="180">R/2</text>
+                                    <text x="310" y="420">-R/2</text>
+                                    <text x="310" y="540">-R</text>
+                                    <!-- стрелочки на осях-->
+                                    <polygon points="600,300 595,305 595, 295" fill="black" stroke="black"></polygon>
+                                    <polygon points="300,0 295,5 305,5" fill="black" stroke="black"></polygon>
+
+                                    <!-- типо точки -->
+                                    <circle id="point" r="5" cx="150" cy="150"
+                                            fill-opacity="0.7" fill="cyan" stroke="cyan" visibility="hidden"></circle>
+                                </svg>
+                            </td>
+                            <td>
+                                <table class="paddingTable">
+                                    <tr>
+                                        <td>
+                                            <table class="borderName">
+                                                <tr>
+                                                    <td>
+                                                        <span id="xTitle">Выбор координаты X:</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="paddingEl">
+                                                        <select name="x" id = "xSelectorStyle" size="3" >
+                                                            <option class="xClicked" name="x" value="-5">-5</option>
+                                                            <option class="xClicked" name="x" value="-4">-4</option>
+                                                            <option class="xClicked" name="x" value="-3">-3</option>
+                                                            <option class="xClicked" name="x" value="-2">-2</option>
+                                                            <option class="xClicked" name="x" value="-1">-1</option>
+                                                            <option class="xClicked" name="x" value="0">0</option>
+                                                            <option class="xClicked" name="x" value="1">1</option>
+                                                            <option class="xClicked" name="x" value="2">2</option>
+                                                            <option class="xClicked" name="x" value="3">3</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div id="exceptionFieldX" class="exception" style="font-size: 20px; color: magenta; font-family: Cursive"></div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <table class="borderName">
+                                                <tr>
+                                                    <td>
+                                                        <span id="yTitle">Ввод координаты Y:</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="paddingEl">
+                                                        <input id="yTextField" class="selectingAreas" type="text" name="y"
+                                                               tabindex="3"
+                                                               placeholder="(-5;3)">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div id="exceptionFieldY" class="exception" style="font-size: 20px; color: magenta; font-family: Cursive"></div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <table id="paddingR" class="borderName">
+                                                <tr>
+                                                    <td>
+                                                        <span id="rTitle">Выбор значения R:</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="paddingEl">
+                                            <span class="clickedElement">
+                                                <!--<input name="r" type="text" placeholder="(2;5)">-->
+                                                <input class="rRadio" type="radio"  name="r" tabindex="1"
+                                                       placeholder="Параметр R"
+                                                       value="1" >
+                                               <span>1</span></inputbutton>
+                                           </span>
+                                                       <span class="clickedElement">
+                                               <input class="rRadio" type="radio"  name="r" tabindex="1"
+                                                       placeholder="Параметр R"
+                                                       value="1.5" >
+                                               <span>1.5</span></input>
+                                           </span>
+                                                       <span class="clickedElement">
+                                               <input class="rRadio" type="radio"  name="r" tabindex="1"
+                                                        placeholder="Параметр R"
+                                                        value="2" >
+                                               <span>2</span></input>
+                                           </span>
+                                                       <span class="clickedElement">
+                                               <input class="rRadio" type="radio"  name="r" tabindex="1"
+                                                       placeholder="Параметр R"
+                                                       value="2.5" >
+                                               <span>2.5</span></input>
+                                           </span>
+                                                       <span class="clickedElement">
+                                               <input class="rRadio" type="radio"  name="r" tabindex="1"
+                                                       placeholder="Параметр R"
+                                                       value="3" >
+                                               <span>3</span></input>
+                                                <!--<button id ="b1" class="rRadio" type="button"  name="r" tabindex="1"
+                                                        placeholder="Параметр R"
+                                                        value="1" >
+                                                <span>1</span></button>
+                                            </span>
+                                                        <span class="clickedElement">
+                                                <button id ="b1.5" class="rRadio" type="button"  name="r" tabindex="1"
+                                                        placeholder="Параметр R"
+                                                        value="1.5" >
+                                                <span>1.5</span></button>
+                                            </span>
+                                                        <span class="clickedElement">
+                                                <button  id ="b2" class="rRadio" type="button"  name="r" tabindex="1"
+                                                         placeholder="Параметр R"
+                                                         value="2" >
+                                                <span>2</span></button>
+                                            </span>
+                                                        <span class="clickedElement">
+                                                <button id ="b2.5" class="rRadio" type="button"  name="r" tabindex="1"
+                                                        placeholder="Параметр R"
+                                                        value="2.5" >
+                                                <span>2.5</span></button>
+                                            </span>
+                                                        <span class="clickedElement">
+                                                <button id = "b3" class="rRadio" type="button"  name="r" tabindex="1"
+                                                        placeholder="Параметр R"
+                                                        value="3" >
+                                                <span>3</span></button> -->
+                                            </span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div id="exceptionFieldR" class="exception" style="font-size: 20px; color: magenta; font-family: Cursive"></div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <!--<span id="exceptionFieldX"></span>-->
+                                           <!-- <span id="exceptionFieldY"></span>-->
+                                            <!--<span id="exceptionFieldR"></span>-->
+                                        </td>
+                                    </tr>
+                                    <tr class="paddingEl">
+                                        <td class="paddingEl" > <!-- submit -->
+                                            <!--<input id="submitButton" type="submit" value="Проверить точку"  />-->
+                                            <table class="borderName">
+                                                <tr>
+                                                    <td class="paddingEl">
+                                                        <!-- костыль со стилем хорошо бы убрать, не понимаю, почему из css не работает-->
+                                                        <button id="subBtn" type="button" style=" background-image: linear-gradient(to right, #69b7eb, #b3dbd3, #f4d6db);
+                                                         -webkit-background-clip: text;
+                                                         -webkit-text-fill-color: transparent;
+                                                         font-size: 25px;">Проверить точку</button>
+                                                    </td>
+                                                </tr>
+                                            </table>
+
+                                        </td>
+                                        <!-- <td class="submit paddingEl">
+                                             <input id="clear" id="submitButton" type="submit" value="Очистить таблицу" />
+
+                                         </td> -->
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <!--<td class="borderName" style="background-color: rgb(66,67,121)">-->
+                <td>
+                    <table>
+                        <tr>
+                            <td>
+                                <div id="resultBox" class="borderName" style="background-color: rgb(66,67,121)">
+
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+                </td>
+            </tr>
+        </table>
+    </form>
+</main>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>-->
+<script type="text/javascript" src="renew_scr.js"></script>
+</body>
+</html>
