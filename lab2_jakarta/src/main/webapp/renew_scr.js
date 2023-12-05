@@ -6,6 +6,9 @@ let x
 let cordX
 let cordY
 
+var pointsX = [];
+var pointsY = [];
+
 function gotData() {
     if (request.readyState === 4) {
         let status = request.status;
@@ -14,6 +17,9 @@ function gotData() {
         }
     }
 }
+
+
+
 
 document.getElementById("subBtn").onclick = function () {
     getFormData()
@@ -132,6 +138,32 @@ function setVisiblePoint(){
     point.setAttribute('cx',300 + cordX)
     point.setAttribute('cy',300 - cordY)
     point.setAttribute("visibility","visible")
+    /*if (pointsX.length > 0) {
+        //здесь должно быть добавление точек
+        for (let i = 0; i < pointsX.length; i++) {
+            var addCircle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            addCircle.setAttribute("r", "5");
+            addCircle.setAttribute("cx", pointsX[i]);
+            addCircle.setAttribute("cy", pointsY[i]);
+            addCircle.setAttribute("fill-opacity", "0.7");
+            addCircle.setAttribute("fill", "blue");
+            addCircle.setAttribute("stroke", "blue");
+            addCircle.setAttribute("visibility", "visible")
+            document.querySelector("svg").appendChild(addCircle);
+        }
+    }
+
+     */
+    var svg = document.querySelector('#picture');
+    var circ=document.createElementNS("http://www.w3.org/2000/svg", 'circle');
+    circ.style.fill="red";
+    circ.style.r="10";
+    circ.style.cx="300";
+    circ.style.cy="300";
+    svg.appendChild(circ);
+
+    pointsX.push(300 + cordX)
+    pointsY.push(300 - cordY)
 }
 
 function unsetVisiblePoint(){
@@ -175,6 +207,7 @@ function changeYCord(){
 }
 
 function checkChoseR() {
+
     let rs = document.documentElement.getElementsByClassName("rRadio");
     let chosen = false;
 
