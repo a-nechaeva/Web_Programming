@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.util.LinkedList;
 
 
-// добавить фильтр, чтобы нельзя было вызвать напрямую из браузера
 @WebServlet(name = "AreaCheckServlet", value = "/AreaCheckServlet")
 public class AreaCheckServlet extends HttpServlet {
     Float x;
@@ -31,15 +30,6 @@ public class AreaCheckServlet extends HttpServlet {
         this.y = Float.parseFloat(y);
         this.r = Float.parseFloat(r);
         handleNumbers();
-        /*if (validate(x, y, r)) {
-            handleNumbers();
-        } else {
-            String s = "<td>Ошибка валидности</td>";
-            answer.addFirst("<tr>"+ s + s + s + s + s + s +"</tr>");
-            servletContext.setAttribute("answer", answer);
-        }
-
-         */
         response.sendRedirect("index_upd.jsp");
     }
 

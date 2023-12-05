@@ -29,7 +29,6 @@ public class ControllerServlet extends HttpServlet {
         String pathCheck = "/AreaCheckServlet";
         String paramT = request.getParameter("t");
 
-        // здесь, видимо, валидация
         String x = request.getParameter("x");
         String y = request.getParameter("y");
         String r = request.getParameter("r");
@@ -48,30 +47,6 @@ public class ControllerServlet extends HttpServlet {
             }
         }
     }
-    // костыль, потому что метод не импортитсяф
-    /*public boolean validation(String x, String y, String r) {
-        boolean isNumbers = false;
-        if (x != null && y != null && r != null) {
-            if (isNumeric(x) && isNumeric(y) && isNumeric(r)) {
-                Float numX = Float.parseFloat(x);
-                Float numY = Float.parseFloat(y);
-                Float numR = Float.parseFloat(r);
-                if (validateRange(numX, numY, numR)) {
-                    isNumbers = true;
-                }
-            }
-        }
-        return isNumbers;
-    }
-    public boolean isNumeric(String str) {
-        str.replaceFirst(",", ".");
-        return str.matches("-?\\d+(\\.\\d+)?");
-    }
-    public boolean validateRange(Float x, Float y, Float r) {
-        return (x >= -5 && x <= 3) && (y > -5.0 && y < 3.0) && (r >= 1.0 && r <= 3.0);
-    }
-
-     */
 
     public void clearServletContext() {
         servletContext.removeAttribute("answer");

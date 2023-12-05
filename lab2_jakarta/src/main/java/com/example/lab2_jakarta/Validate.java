@@ -2,7 +2,6 @@ package com.example.lab2_jakarta;
 
 public class Validate {
 
-    //Float x, y, r;
     public static boolean validation(String x, String y, String r) {
         boolean isNumbers = false;
         if (x != null && y != null && r != null) {

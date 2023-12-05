@@ -1,15 +1,15 @@
 const request = new XMLHttpRequest();
-var y
-var r
-var x
+let y
+let r
+let x
 
-var cordX
-var cordY
+let cordX
+let cordY
 
 function gotData() {
-    if (request.readyState == 4) {
+    if (request.readyState === 4) {
         let status = request.status;
-        if (status == 200) {
+        if (status === 200) {
             document.getElementById("resultBox").innerHTML = request.responseText
         }
     }
@@ -29,7 +29,7 @@ function setCoordinates(){
 }
 
 document.addEventListener('click', function (e) {
-    if (e.target.getAttribute('id') == 'clrBtn') {
+    if (e.target.getAttribute('id') === 'clrBtn') {
         sendRequestClear()
         unsetVisiblePoint()
     }
@@ -60,23 +60,6 @@ function sendRequestClear() {
     request.send();
 }
 
-// вместо кнопки "проверить точку" можно нажать enter
-/*
-document.querySelectorAll('.input').forEach(function (item) {
-    item.addEventListener("keydown", function (event) {
-        if (event.keyCode == 13) {
-            event.preventDefault()
-            getFormData()
-            if(sendRequestHandle()){
-                setCoordinates()
-                setVisiblePoint()
-            }
-        }
-
-    })
-});
-
- */
 
 function getFormData() {
     let form = document.getElementById('form')
@@ -109,17 +92,13 @@ function validateCoordinates() {
 }
 
 function checkYInArea(){
-    if (y>-5 && y<3){
-        return true
-    }
-    return false
+    return y > -5 && y < 3;
+
 }
 
 function checkXInArea(){
-    if (x>=-5 && x<=3){
-        return true
-    }
-    return false
+    return x >= -5 && x <= 3;
+
 }
 
 function validate() {
@@ -127,11 +106,7 @@ function validate() {
     let isValidX = checkX(x)
     let isValidR = checkR(r)
 
-    if (isValidY && isValidX && isValidR) {
-        return true
-    } else {
-        return false
-    }
+    return isValidY && isValidX && isValidR;
 }
 
 document.querySelector('svg').addEventListener("mousedown", function (e) {
@@ -154,8 +129,8 @@ function detectClick() {
 
 function setVisiblePoint(){
     let point = document.getElementById("point")
-    point.setAttribute('cx',300+cordX)
-    point.setAttribute('cy',300-cordY)
+    point.setAttribute('cx',300 + cordX)
+    point.setAttribute('cy',300 - cordY)
     point.setAttribute("visibility","visible")
 }
 
@@ -200,7 +175,6 @@ function changeYCord(){
 }
 
 function checkChoseR() {
-    let form = document.getElementById('form')
     let rs = document.documentElement.getElementsByClassName("rRadio");
     let chosen = false;
 

@@ -1,11 +1,9 @@
-package com.example.lab2_jakarta;
-
 import jakarta.servlet.Filter;
 import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
-// фильтер для того, чтобы не допускать прямого обращения к AreaCheckServlet
+// фильтр для того, чтобы не допускать прямого обращения к AreaCheckServlet
 public class FilterForAreaCheck implements Filter {
     private FilterConfig filterConfig;
     @Override
@@ -18,7 +16,6 @@ public class FilterForAreaCheck implements Filter {
 
         if (filterConfig.getInitParameter("active").equalsIgnoreCase("true")) {
             HttpServletRequest req = (HttpServletRequest) request;
-            // Парсим адрес в строку
             String r = req.getRequestURL().toString();
             if (!r.contains("AreaCheckServlet")) {
                 chain.doFilter(request, response);
