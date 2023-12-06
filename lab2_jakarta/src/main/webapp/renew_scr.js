@@ -135,10 +135,14 @@ function detectClick() {
 }
 
 function setVisiblePoint(){
+    let ns = "http://www.w3.org/2000/svg"
+    let svg = document.getElementById('picture');
        if (pointsX.length > 0) {
+           let need_to_remove_points = document.getElementsByClassName('new_p');
+           for (let pp of need_to_remove_points) {
+               pp.remove();
+           }
         //здесь должно быть добавление точек
-           let ns = "http://www.w3.org/2000/svg"
-           let svg = document.getElementById('picture');
         for (let i = 0; i < pointsX.length; i++) {
             let circle = document.createElementNS(ns, 'circle');
             circle.setAttribute('r', 5);
@@ -152,19 +156,22 @@ function setVisiblePoint(){
         }
     }
 
-   /* let point_cur = document.createElementNS(ns, 'circle');
+    let point_cur = document.createElementNS(ns, 'circle');
     point_cur.setAttribute('r', 5);
     point_cur.setAttribute('cx', 300 + cordX);
     point_cur.setAttribute('cy', 300 - cordY);
     point_cur.setAttribute('fill', 'darkmagenta');
     point_cur.setAttribute('stroke', 'magenta')
-    point_cur.setAttribute('class', 'old');
-    svg.append(point_cur);*/
+    point_cur.setAttribute('class', 'new_p');
+    point_cur.setAttribute("visibility","visible")
+    svg.append(point_cur);
 
-    let point = document.getElementById("point")
+    /*let point = document.getElementById("point")
     point.setAttribute('cx',300 + cordX)
     point.setAttribute('cy',300 - cordY)
     point.setAttribute("visibility","visible")
+
+     */
 
     pointsX.push(300 + cordX)
     pointsY.push(300 - cordY)
@@ -176,12 +183,18 @@ function unsetVisiblePoint(){
     point.setAttribute('cy',300)
     point.setAttribute("visibility","hidden")
 
-    for (let i = 0; i < pointsX.length; i++) {
-        let old_points = document.getElementsByClassName('old');
-        for (let p of old_points) {
-            p.setAttribute("visibility", "hidden");
-        }
+
+    let old_points = document.getElementsByClassName('old');
+    for (let p of old_points) {
+        p.setAttribute("visibility","hidden")
+        p.remove();
     }
+    let last_point = document.getElementsByClassName('new_p');
+    for (let last_p of last_point) {
+        last_p.setAttribute("visibility","hidden")
+        last_p.remove();
+    }
+
     pointsX = []
     pointsY = []
 }
