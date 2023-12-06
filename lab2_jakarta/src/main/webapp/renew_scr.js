@@ -140,42 +140,23 @@ function setVisiblePoint(){
     point.setAttribute('cy',300 - cordY)
     point.setAttribute("visibility","visible")
 
-    let ns = "http://www.w3.org/2000/svg"
-    //let svg = document.createElementNS(ns, 'svg');
-    let svg = document.getElementById('picture');
-    let circle = document.createElementNS(ns, 'circle');
-    circle.setAttribute('r', 50)
-    circle.setAttribute('cx', 60)
-    circle.setAttribute('cy', 60)
-    circle.setAttribute('fill', 'wheat')
-    svg.append(circle);
-    //document.body.append(svg);
-    /*if (pointsX.length > 0) {
+
+    if (pointsX.length > 0) {
         //здесь должно быть добавление точек
         for (let i = 0; i < pointsX.length; i++) {
-            var addCircle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-            addCircle.setAttribute("r", "5");
-            addCircle.setAttribute("cx", pointsX[i]);
-            addCircle.setAttribute("cy", pointsY[i]);
-            addCircle.setAttribute("fill-opacity", "0.7");
-            addCircle.setAttribute("fill", "blue");
-            addCircle.setAttribute("stroke", "blue");
-            addCircle.setAttribute("visibility", "visible")
-            document.querySelector("svg").appendChild(addCircle);
+
+            let ns = "http://www.w3.org/2000/svg"
+            let svg = document.getElementById('picture');
+            let circle = document.createElementNS(ns, 'circle');
+            circle.setAttribute('r', 5);
+            circle.setAttribute('cx', pointsX[i]);
+            circle.setAttribute('cy', pointsY[i]);
+            circle.setAttribute('fill', 'wheat');
+            svg.append(circle);
+            // see: https://ru.stackoverflow.com/questions/563297/svg-%D0%94%D0%B8%D0%BD%D0%B0%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F-%D0%BF%D0%BE%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B0-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BD%D0%B0-%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%83
+
         }
     }
-
-     */
-    //var svg = document.getElementById('picture');
-    //var old_point = SVG.create('circle', { cx: 300, cy: 300, r: 10, fill: '#d00'});
-    //svg.append(old_point);
-    //document.getElementById('picture').appendChild(old_point);
-    /*var circ=document.createElementNS("http://www.w3.org/2000/svg", 'circle');
-    circ.style.fill="red";
-    circ.style.r="10";
-    circ.style.cx="300";
-    circ.style.cy="300";
-    svg.appendChild(circ);*/
 
     pointsX.push(300 + cordX)
     pointsY.push(300 - cordY)
@@ -186,6 +167,8 @@ function unsetVisiblePoint(){
     point.setAttribute('cx',300)
     point.setAttribute('cy',300)
     point.setAttribute("visibility","hidden")
+
+    pointsX.
 }
 
 function convertCoordinates() {
