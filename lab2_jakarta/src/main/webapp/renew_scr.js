@@ -44,7 +44,8 @@ document.addEventListener('click', function (e) {
 function sendRequestGetData() {
     let response = "t=" + 3;
     request.open("POST", "ControllerServlet?" + response);
-    request.onreadystatechange = gotData;
+    request.onreadystatechange = gotData();
+
     request.send();
 }
 

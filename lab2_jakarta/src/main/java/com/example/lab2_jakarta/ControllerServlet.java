@@ -5,7 +5,6 @@ import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import java.io.IOException;
 import java.util.LinkedList;
-import com.example.lab2_jakarta.Validate;
 
 import static com.example.lab2_jakarta.Validate.validation;
 
