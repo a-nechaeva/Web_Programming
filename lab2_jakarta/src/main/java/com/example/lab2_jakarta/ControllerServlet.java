@@ -59,7 +59,7 @@ public class ControllerServlet extends HttpServlet {
             servletContext.setAttribute("number", 0);
         } else if (t == 2) {
             LinkedList<String> answer =new LinkedList<>();
-            String s = "<td>Free \n ^..% </td>";
+            String s = "<td>Free \n ^..^ </td>";
             answer.add("<tr>" + s + s + s + s + s + s+"</tr>");
             servletContext.setAttribute("answer",
                     answer);

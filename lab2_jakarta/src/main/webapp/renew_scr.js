@@ -251,7 +251,6 @@ function checkY(y) {
     } else {
         exceptionFieldY.innerText = ""
         return true
-
     }
 }
 
