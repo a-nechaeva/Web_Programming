@@ -164,33 +164,21 @@ function setVisiblePoint(){
     point_cur.setAttribute("visibility","visible")
     svg.append(point_cur);
 
-    /*let point = document.getElementById("point")
-    point.setAttribute('cx',300 + cordX)
-    point.setAttribute('cy',300 - cordY)
-    point.setAttribute("visibility","visible")
-
-     */
-
     pointsX.push(300 + cordX)
     pointsY.push(300 - cordY)
 }
 
 function unsetVisiblePoint(){
-    /*let point = document.getElementById("point")
-    point.setAttribute('cx',300)
-    point.setAttribute('cy',300)
-    point.setAttribute("visibility","hidden")
 
-     */
-
+    // проблема с точками!!! ЧЕТНЫЕ остаются WHY???
     let old_points = document.getElementsByClassName('old');
     for (let p of old_points) {
-        //p.setAttribute("visibility","hidden")
+        p.setAttribute("visibility","hidden")
         p.remove();
     }
     let last_point = document.getElementsByClassName('new_p');
     for (let last_p of last_point) {
-        //last_p.setAttribute("visibility","hidden")
+        last_p.setAttribute("visibility","hidden")
         last_p.remove();
     }
 
