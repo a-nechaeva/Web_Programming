@@ -143,18 +143,16 @@ function setVisiblePoint(){
                pp.remove();
            }
         //здесь должно быть добавление точек
-        for (let i = 0; i < pointsX.length; i++) {
-            let circle = document.createElementNS(ns, 'circle');
-            circle.setAttribute('r', 5);
-            circle.setAttribute('cx', pointsX[i]);
-            circle.setAttribute('cy', pointsY[i]);
-            circle.setAttribute('fill', 'midnightblue');
-            circle.setAttribute('class', 'old');
-            svg.append(circle);
-            // see: https://ru.stackoverflow.com/questions/563297/svg-%D0%94%D0%B8%D0%BD%D0%B0%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F-%D0%BF%D0%BE%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B0-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BD%D0%B0-%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%83
 
-        }
-    }
+        let circle = document.createElementNS(ns, 'circle');
+        circle.setAttribute('r', 5);
+        circle.setAttribute('cx', pointsX[pointsX.length - 1]);
+        circle.setAttribute('cy', pointsY[pointsY.length - 1]);
+        circle.setAttribute('fill', 'midnightblue');
+        circle.setAttribute('class', 'old');
+        svg.append(circle);
+        // see: https://ru.stackoverflow.com/questions/563297/svg-%D0%94%D0%B8%D0%BD%D0%B0%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F-%D0%BF%D0%BE%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B0-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BD%D0%B0-%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%83
+       }
 
     let point_cur = document.createElementNS(ns, 'circle');
     point_cur.setAttribute('r', 5);
@@ -178,20 +176,21 @@ function setVisiblePoint(){
 }
 
 function unsetVisiblePoint(){
-    let point = document.getElementById("point")
+    /*let point = document.getElementById("point")
     point.setAttribute('cx',300)
     point.setAttribute('cy',300)
     point.setAttribute("visibility","hidden")
 
+     */
 
     let old_points = document.getElementsByClassName('old');
     for (let p of old_points) {
-        p.setAttribute("visibility","hidden")
+        //p.setAttribute("visibility","hidden")
         p.remove();
     }
     let last_point = document.getElementsByClassName('new_p');
     for (let last_p of last_point) {
-        last_p.setAttribute("visibility","hidden")
+        //last_p.setAttribute("visibility","hidden")
         last_p.remove();
     }
 
