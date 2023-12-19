@@ -170,16 +170,15 @@ function setVisiblePoint(){
 
 function unsetVisiblePoint(){
 
-    // проблема с точками!!! ЧЕТНЫЕ остаются WHY???
-    let old_points = document.getElementsByClassName('old');
-    for (let p of old_points) {
-        p.setAttribute("visibility","hidden")
-        p.remove();
-    }
-    let last_point = document.getElementsByClassName('new_p');
+     let last_point = document.getElementsByClassName('new_p');
     for (let last_p of last_point) {
         last_p.setAttribute("visibility","hidden")
         last_p.remove();
+    }
+    // ДЛЯ УДАЛЕНИЯ ВСЕХ ТОЧЕК ПИШЕМ ТАК:
+    x = document.getElementsByClassName("old");
+    while(x.length){
+        x[0].parentElement.removeChild(x[0]);
     }
 
     pointsX = []
