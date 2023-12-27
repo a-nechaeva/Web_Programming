@@ -245,7 +245,7 @@ function checkY(y) {
         exceptionFieldY.innerText = "Поле Y должно быть числом"
         return false
     } else if (!(y < 3 && y > -5)) {
-        exceptionFieldY.innerText = "Поле Y должно быть (-3;3)"
+        exceptionFieldY.innerText = "Поле Y должно быть (-5;3)"
         return false
     } else {
         exceptionFieldY.innerText = ""
