@@ -1,21 +1,11 @@
-/*function clock() {
-    let date = new Date(),
-        hours = (date.getHours() < 10) ? '0' + date.getHours() : date.getHours(),
-        minutes = (date.getMinutes() < 10) ? '0' + date.getMinutes() : date.getMinutes(),
-        seconds = (date.getSeconds() < 10) ? '0' + date.getSeconds() : date.getSeconds()
-
-    document.getElementById('clock').innerText = hours + ":" +
-        minutes + ":" + seconds
-}
-setTimeout(clock, 0)
-setInterval(clock, 10000)
-
- */
-var myVar = setInterval(function() {
-    myTimer();
-}, 10000);
-
 function myTimer() {
     var d = new Date();
-    document.getElementById("clock").innerHTML = d.toLocaleTimeString();
+    var day = d.getDate();
+    day = (day < 10) ? '0' + day : day
+    var month = d.getMonth() + 1;
+    month = (month < 10) ? '0' + month : month
+    var year = d.getFullYear() + '\n';
+    document.getElementById("clock").innerHTML = "Дата: " +  day + "." + month + "." + year + "Время: " + d.toLocaleTimeString();
 }
+setTimeout(myTimer, 0)
+setInterval(myTimer, 10000) // обновление каждые 10 секунд

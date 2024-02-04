@@ -1,4 +1,4 @@
-html {
+body {
     /*background-size: no-repeat;
  background-image: url(#{request.contextPath}/img/main_pic.jpg);
  background-position: center;
@@ -6,28 +6,25 @@ html {
     height: 400px;
     width: 400px;
      */
-    font-size: large;
+    font-size: 40px;
     font-family: "Comic Sans MS";
-
+    text-align: center;
 
     background-size: 100% 100%;
-    /*height: 800px;
-    width: 1500px;
+
+    background: #2b2a32;
+}
+#headTable {
+    margin-left: 450px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    outline-color: magenta;
+    background: antiquewhite;
+    /*border-color: black;
+    border-width: medium;
 
      */
-
-    background-image: linear-gradient(
-            220deg,
-            hsl(0deg 0% 0%) 0%,
-            hsl(208deg 100% 15%) 25%,
-            hsl(201deg 100% 21%) 36%,
-            hsl(197deg 100% 28%) 42%,
-            hsl(201deg 54% 45%) 47%,
-            hsl(203deg 59% 61%) 52%,
-            hsl(187deg 100% 41%) 59%,
-            hsl(173deg 100% 39%) 66%,
-            hsl(136deg 53% 57%) 75%,
-            hsl(71deg 58% 49%) 87%,
-            hsl(41deg 100% 54%) 100%
-    );
+}
+#headTable:hover {
+    background: aquamarine;
 }
