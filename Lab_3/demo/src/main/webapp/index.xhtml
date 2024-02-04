@@ -5,9 +5,7 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core" >
-<!--<f:view>
-    <h:outputLabel value="Hello, world"/>
-</f:view>-->
+
 <h:head>
     <title>Web3</title>
     <h:outputScript library="scripts" name="clock.js"/>
@@ -28,7 +26,7 @@
     </div>
     <div id="toApplication">
         <h:form>
-            <h:commandLink action="app" value="Приложение"/>
+            <h:commandLink action="app" value="Приложение" styleClass="my_commandLink"/>
         </h:form>
     </div>
 </h:body>
