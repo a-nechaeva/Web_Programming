@@ -13,7 +13,7 @@ setInterval(clock, 10000)
  */
 var myVar = setInterval(function() {
     myTimer();
-}, 1000);
+}, 10000);
 
 function myTimer() {
     var d = new Date();
