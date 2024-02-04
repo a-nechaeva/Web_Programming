@@ -5,7 +5,8 @@ function myTimer() {
     var month = d.getMonth() + 1;
     month = (month < 10) ? '0' + month : month
     var year = d.getFullYear() + '\n';
-    document.getElementById("clock").innerHTML = "Дата: " +  day + "." + month + "." + year + "Время: " + d.toLocaleTimeString();
+    document.getElementById("date").innerHTML = "Дата: " +  day + "." + month + "." + year;
+    document.getElementById("clock").innerHTML = "Время: " + d.toLocaleTimeString();
 }
 setTimeout(myTimer, 0)
 setInterval(myTimer, 10000) // обновление каждые 10 секунд
