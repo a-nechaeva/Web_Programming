@@ -1,0 +1,28 @@
+body {
+    font-family: "Comic Sans MS";
+    background: #2b2a32;
+}
+
+#toStart {
+    text-align: center;
+    margin-right: 1300px;
+    font-size: 30px;
+}
+#toStart:hover {
+    border-image-slice: 1;
+    border-width: 2px;
+    border-style: solid;
+    border-image: linear-gradient(45deg, skyblue, coral, yellow) 1;
+}
+
+.newCommandLink {
+    color: #a2d9b7;
+}
+
+.newCommandLink:hover {
+    color: yellow;
+}
+
+.newCommandLink:active {
+    color: coral;
+}
